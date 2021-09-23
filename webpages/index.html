@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="margin: 0;">
+    <div style="height: 980px;">
+        <image src="./img/tree.jpg" style="position: absolute; z-index: -99; height: 100%; width: 100%;"></image>
+
+        <canvas id="canvasLeaves"></canvas>
+    </div>
+    <div style="height: 980px;">
+        <image src="./img/nighttime.jpg" style="position: absolute; z-index: -99; height: 100%; width: 100%;"></image>
+
+        <canvas id="canvasFireFlies"></canvas>
+    </div>
+    <div style="height: 980px;">
+
+    </div>
+    <script src="canvasLeaves.js"></script>
+    <script src="canvasFireFlies.js"></script>
+</body>
+</html>
