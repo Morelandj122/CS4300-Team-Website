@@ -1,9 +1,12 @@
+//One of Seven places that require input for new canvas section
 var canvasLeaves = document.getElementById('canvasLeaves');
 var cL = canvasLeaves.getContext('2d');
 var canvasFireFlies = document.getElementById('canvasFireFlies');
 var cF = canvasFireFlies.getContext('2d');
 var canvasSnow = document.getElementById('canvasSnow');
 var cS = canvasSnow.getContext('2d');
+var canvasPyro = document.getElementById('canvasPyro');
+var cP = canvasPyro.getContext('2d');
 
 var ScrollDistance = 0;
 var CanvasInUse = canvasLeaves;
@@ -15,7 +18,7 @@ CanvasInUse.height = window.innerHeight;
 
 this.window.addEventListener('scroll', function () {
     //console.log("Scroll = " + window.scrollY);
-    //this should determine which canvas is used
+    //Second of Seven places that require input for new canvas section
     ScrollDistance = window.scrollY;
     if (ScrollDistance < 500) {
         if (IsLoaded != 0) {
@@ -35,12 +38,22 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance > 1500) {
+    } else if (ScrollDistance < 2500 && ScrollDistance > 1500) {
         if (IsLoaded != 2) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 2;
             CanvasInUse = canvasSnow;
             CanvasContextInUse = cS;
+            CanvasInUse.width = window.innerWidth;
+            CanvasInUse.height = window.innerHeight;
+            init();
+        }
+    } else if (ScrollDistance > 2500) {
+        if (IsLoaded != 3) {
+            CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
+            IsLoaded = 3;
+            CanvasInUse = canvasPyro;
+            CanvasContextInUse = cP;
             CanvasInUse.width = window.innerWidth;
             CanvasInUse.height = window.innerHeight;
             init();
@@ -70,6 +83,7 @@ var spawnxplus = 0; //innerWidth / X
 var spawnydiv = 1;
 var spawnyplus = 0; //innerHeight / X
 
+//Third of Seven places that require input for new canvas section
 function SpawnLocation() {
     if (CanvasInUse == canvasLeaves) {
         //tree location based on window width and height
@@ -87,6 +101,11 @@ function SpawnLocation() {
         spawnxplus = 0; //innerWidth / X
         spawnydiv = 3;
         spawnyplus = 0; //innerHeight / X        
+    } else if (CanvasInUse == canvasPyro) {
+        spawnxdiv = 1;
+        spawnxplus = 0; //innerWidth / X
+        spawnydiv = 10;
+        spawnyplus = innerHeight * 0.65; //innerHeight / X        
     }
 }
 
@@ -116,6 +135,20 @@ var colorArraySnow = [
     '#C1D3FE',
     '#B6CCFE',
     '#ABC4FF',
+];
+
+//Pyro colors found on coolors.co
+var colorArrayPyro = [
+    '#FF4800',
+    '#FF5400',
+    '#FF6000',
+    '#FF6D00',
+    '#FF7900',
+    '#FF8500',
+    '#FF9100',
+    '#FF9E00',
+    '#FFAA00',
+    '#FFB600',
 ];
 
 //Snowflake images
@@ -214,6 +247,7 @@ window.addEventListener('resize', function () {
         }
     } */
 
+//Fourth of Seven places that require input for new canvas section
 function Leaf(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
     this.x = x;
     this.y = y;
@@ -330,10 +364,10 @@ function FireFly(x, y, dx, dy, radius, lifespan) {
     this.draw = function () {
         CanvasContextInUse.save();
 
-        if (this.life > (this.lifespan * 0.96)) {
-            CanvasContextInUse.globalAlpha = (1 - (this.life / this.lifespan - 0.96) / 0.04);
-        } else if (this.life > (this.lifespan * 0.95)) {
-            CanvasContextInUse.globalAlpha = ((this.life / this.lifespan - 0.95) / 0.10);
+        if (this.life > (this.lifespan * 0.90)) {
+            CanvasContextInUse.globalAlpha = (1 - (this.life / this.lifespan - 0.90) / 0.1);
+        } else if (this.life > (this.lifespan * 0.85)) {
+            CanvasContextInUse.globalAlpha = ((this.life / this.lifespan - 0.85) / 0.2);
         } else if (this.life > this.lifespan) {
             CanvasContextInUse.globalAlpha = 0;
         }
@@ -353,7 +387,9 @@ function FireFly(x, y, dx, dy, radius, lifespan) {
         this.life++;
         if (this.life >= this.lifespan * 1.0) {
             this.life = 0;
-        } else if (this.life >= this.lifespan * 0.95) {
+            this.x = (Math.random() * (innerWidth - radius * 2) + radius) / spawnxdiv + spawnxplus;
+            this.y = (Math.random() * (innerHeight - radius * 2) + radius) / spawnydiv + spawnyplus;
+        } else if (this.life >= this.lifespan * 0.85) {
 
             if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
                 this.dx = -this.dx;
@@ -506,14 +542,112 @@ function SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespa
     }
 }
 
+function Pyro(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
+    this.x = x;
+    this.y = y;
+    this.dx = dx;
+    this.dy = dy;
+    this.angle = angleStart;
+    this.spin = rotationalVelocity;
+    this.acc = 0.05;
+    this.radius = radius;
+    this.gravity = 0.02;
+    this.lifespan = lifespan;
+    this.life = Math.random() * lifespan;
+    this.imd = 75;
+    this.color = colorArrayPyro[Math.floor(Math.random() * colorArrayPyro.length)];
+    this.img = new Image();
+    this.img.src = snowFlakePngArray[Math.floor(Math.random() * snowFlakePngArray.length)];
+
+    
+    this.rotate = function (x, y, angle) {
+        CanvasContextInUse.save();
+        CanvasContextInUse.translate(x, y);
+        CanvasContextInUse.rotate(angle * TO_RADIANS);
+
+        if (this.life > (this.lifespan * 0.9)) {
+            CanvasContextInUse.globalAlpha = (1 - (this.life / this.lifespan - 0.9) / 0.1);
+        } else if (this.life > this.lifespan) {
+            CanvasContextInUse.globalAlpha = 0;
+        }
+        CanvasContextInUse.drawImage(this.img, -(this.radius / 2), -(this.radius / 2), this.radius, this.radius);
+        CanvasContextInUse.restore();
+    }
+
+    this.draw = function () {
+        CanvasContextInUse.save();
+
+        if (this.life > (this.lifespan * 0.9)) {
+            CanvasContextInUse.globalAlpha = (1 - (this.life / this.lifespan - 0.9) / 0.1);
+        } else if (this.life > this.lifespan) {
+            CanvasContextInUse.globalAlpha = 0;
+        }
+        var gradient = CanvasContextInUse.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+        gradient.addColorStop(0, this.color);
+        //gradient.addColorStop(0.1, this.color);
+        gradient.addColorStop(1, 'transparent');
+        CanvasContextInUse.beginPath();
+        CanvasContextInUse.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        //CanvasContextInUse.fillStyle = this.color;
+        CanvasContextInUse.fillStyle = gradient;
+        CanvasContextInUse.fill();
+        CanvasContextInUse.restore();
+    }
+
+    this.update = function () {
+        this.life++;
+        if (this.life >= this.lifespan * 1.0) {
+            this.life = 0;
+            this.x = (Math.random() * (innerWidth - radius * 2) + radius) / spawnxdiv + spawnxplus;
+            this.y = (Math.random() * (innerHeight - radius * 2) + radius) / spawnydiv + spawnyplus;
+        } else if (this.life >= this.lifespan * 0.5) {
+
+            if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+                this.dx = -this.dx;
+            }
+
+            if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+                this.dy = -this.dy;
+            }
+
+            if (this.dy > 5 || this.dy < -5) {
+                this.dy = this.dy / 2;
+            } else if (this.dy < -1) {
+                this.dy += this.gravity;
+            } else if (this.dy > -0.1) {
+                this.dy -= this.gravity;
+            }
+
+            if (this.dx > 5 || this.dx < -5) {
+                this.dx = this.dx / 2;
+            } else if (this.dx > 0.5) {
+                this.dx -= this.gravity;
+            } else if (this.dx < -0.5) {
+                this.dx += this.gravity;
+            }
+
+            //on click interaction 
+
+            this.x += this.dx;
+            this.y += this.dy;
+
+            this.draw();
+            //this.rotate(this.x, this.y, this.angle += this.spin);
+        }
+    }
+}
+
+//Fifth of Seven places that require input for new canvas section
 //var circleArray = [];
 var leafArray = [];
 var fireFlyArray = [];
 var snowFlakeArray = [];
+var pyroArray = [];
 
 function init() {
     SpawnLocation();
 
+    //Sixth of Seven places that require input for new canvas section
     /*     circleArray = [];
     for (let i = 0; i < 800; i++) {
         var radius = Math.random() * 3 + 1;
@@ -562,8 +696,20 @@ function init() {
             var lifespan = Math.random() * 1000 + 500;
             snowFlakeArray.push(new SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan));
         }
+    } else if (CanvasInUse == canvasPyro) {
+        pyroArray = [];
+        for (let i = 0; i < 100; i++) {
+            var radius = Math.random() * 6 + 2;
+            var x = (Math.random() * (innerWidth - radius * 2) + radius) / spawnxdiv + spawnxplus;
+            var y = (Math.random() * (innerHeight - radius * 2) + radius) / spawnydiv + spawnyplus;
+            var dx = (Math.random() - 0.5) * 2;
+            var dy = (Math.random() * -1) - 0.1;
+            var rotationalVelocity = (Math.random() - 0.5) * 4;
+            var angleStart = Math.random() * 360;
+            var lifespan = Math.random() * 1000 + 500;
+            pyroArray.push(new Pyro(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan));
+        }
     }
-
 }
 
 function animate() {
@@ -574,6 +720,7 @@ function animate() {
         circleArray[i].update();
     } */
 
+    //Seventh of Seven places that require input for new canvas section
     if (CanvasInUse == canvasLeaves) {
         for (var i = 0; i < leafArray.length; i++) {
             leafArray[i].update();
@@ -585,6 +732,10 @@ function animate() {
     } else if (CanvasInUse == canvasSnow) {
         for (var i = 0; i < snowFlakeArray.length; i++) {
             snowFlakeArray[i].update();
+        }
+    } else if (CanvasInUse == canvasPyro) {
+        for (var i = 0; i < pyroArray.length; i++) {
+            pyroArray[i].update();
         }
     }
 }
