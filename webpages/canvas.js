@@ -77,6 +77,8 @@ var maxSpeed = 1;
 var radius = 1;
 
 //defaults
+var onClickRadius = 20;
+var rect = CanvasInUse.getBoundingClientRect();
 var TO_RADIANS = Math.PI / 180;
 var spawnxdiv = 1;
 var spawnxplus = 0; //innerWidth / X
@@ -105,7 +107,7 @@ function SpawnLocation() {
         spawnxdiv = 1;
         spawnxplus = 0; //innerWidth / X
         spawnydiv = 10;
-        spawnyplus = innerHeight * 0.65; //innerHeight / X        
+        spawnyplus = innerHeight * 0.8; //innerHeight / X        
     }
 }
 
@@ -170,19 +172,21 @@ var leafPngArray = [
     './leaves/leaf_4.png',
     './leaves/leaf_5.png',
     './leaves/leaf_6.png',
-    './leaves/leaf_7.png'
+    './leaves/leaf_7.png',
 ]
 
 window.addEventListener('mousemove', function (event) {
     //console.log("y = " + mouse.y + " and x = " + mouse.x);
-    mouse.x = event.x;
-    mouse.y = event.y;
+    rect = CanvasInUse.getBoundingClientRect();
+    mouse.x = event.x - rect.left;
+    mouse.y = event.y - rect.top;
 });
 
 window.addEventListener('click', function (event) {
     //console.log("y = " + click.y + " and x = " + click.x);
-    click.x = event.x;
-    click.y = event.y;
+    rect = CanvasInUse.getBoundingClientRect();
+    click.x = event.x - rect.left;
+    click.y = event.y - rect.top;
 });
 
 window.addEventListener('resize', function () {
@@ -190,6 +194,37 @@ window.addEventListener('resize', function () {
     CanvasInUse.height = window.innerHeight;
     init();
 });
+
+//this function creates the shatter effect when clicked on
+function Shatter(radiusObject) {
+    if (CanvasInUse == canvasSnow) {
+        for (let i = 0; i < 10; i++) {
+            var radius = Math.random() * radiusObject + 0.3;
+            var x = click.x;
+            var y = click.y;
+            var dx = (Math.random() - 0.5) * 3;
+            var dy = (Math.random() - 0.5) * 3;
+            var rotationalVelocity = (Math.random() - 0.5) * 4;
+            var angleStart = Math.random() * 360;
+            var lifespan = (1000 + 500) * 0.5;
+            clickArray.push(new SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan));
+        }
+    } else if (CanvasInUse == canvasPyro) {
+        for (let i = 0; i < 10; i++) {
+            var radius = Math.random() * radiusObject + 0.3;
+            var x = click.x;
+            var y = click.y;
+            var dx = (Math.random() - 0.5) * 3;
+            var dy = (Math.random() - 0.5) * 3;
+            var rotationalVelocity = (Math.random() - 0.5) * 4;
+            var angleStart = Math.random() * 360;
+            var lifespan = (1000 + 500) * 0.5;
+            clickArray.push(new Pyro(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan));
+        }
+    }
+    click.x = undefined;
+    click.y = undefined;
+}
 
 /* function Circle(x, y, dx, dy, radius, minSpeeddx, minSpeeddy) {
     this.x = x;
@@ -264,12 +299,12 @@ function Leaf(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
     this.img = new Image();
     this.img.src = leafPngArray[Math.floor(Math.random() * leafPngArray.length)];
 
-    this.rotate = function (x, y, angle) {
+    this.draw = function () {
         CanvasContextInUse.save();
 
 
-        CanvasContextInUse.translate(x, y);
-        CanvasContextInUse.rotate(angle * TO_RADIANS);
+        CanvasContextInUse.translate(this.x, this.y);
+        CanvasContextInUse.rotate(this.angle * TO_RADIANS);
 
         if (this.life > (this.lifespan * 0.9)) {
             CanvasContextInUse.globalAlpha = (1 - (this.life / this.lifespan - 0.9) / 0.1);
@@ -340,8 +375,9 @@ function Leaf(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
 
             this.x += this.dx;
             this.y += this.dy;
+            this.angle += this.spin;
 
-            this.rotate(this.x, this.y, this.angle += this.spin);
+            this.draw();
         }
     }
 }
@@ -459,16 +495,15 @@ function SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespa
     this.gravity = 0.02;
     this.lifespan = lifespan;
     this.life = Math.random() * lifespan;
-    this.imd = 75;
     this.color = colorArraySnow[Math.floor(Math.random() * colorArraySnow.length)];
     this.img = new Image();
     this.img.src = snowFlakePngArray[Math.floor(Math.random() * snowFlakePngArray.length)];
 
-    
-    this.rotate = function (x, y, angle) {
+
+    this.draw = function () {
         CanvasContextInUse.save();
-        CanvasContextInUse.translate(x, y);
-        CanvasContextInUse.rotate(angle * TO_RADIANS);
+        CanvasContextInUse.translate(this.x, this.y);
+        CanvasContextInUse.rotate(this.angle * TO_RADIANS);
 
         if (this.life > (this.lifespan * 0.9)) {
             CanvasContextInUse.globalAlpha = (1 - (this.life / this.lifespan - 0.9) / 0.1);
@@ -479,7 +514,7 @@ function SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespa
         CanvasContextInUse.restore();
     }
 
-    this.draw = function () {
+    this.drawNotInUse = function () {
         CanvasContextInUse.save();
 
         if (this.life > (this.lifespan * 0.9)) {
@@ -532,12 +567,17 @@ function SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespa
             }
 
             //on click interaction 
+            if (Math.abs(click.x - this.x) < onClickRadius && Math.abs(click.y - this.y) < onClickRadius) {
+                //console.log(click.x + "mx my" + click.y + this.x + "x y" +  this.y);
+                this.life = 0;
+                Shatter(this.radius);
+            }
 
             this.x += this.dx;
             this.y += this.dy;
+            this.angle += this.spin;
 
-            //this.draw();
-            this.rotate(this.x, this.y, this.angle += this.spin);
+            this.draw();
         }
     }
 }
@@ -554,16 +594,15 @@ function Pyro(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
     this.gravity = 0.02;
     this.lifespan = lifespan;
     this.life = Math.random() * lifespan;
-    this.imd = 75;
     this.color = colorArrayPyro[Math.floor(Math.random() * colorArrayPyro.length)];
     this.img = new Image();
     this.img.src = snowFlakePngArray[Math.floor(Math.random() * snowFlakePngArray.length)];
 
-    
-    this.rotate = function (x, y, angle) {
+
+    this.rotate = function () {
         CanvasContextInUse.save();
-        CanvasContextInUse.translate(x, y);
-        CanvasContextInUse.rotate(angle * TO_RADIANS);
+        CanvasContextInUse.translate(this.x, this.y);
+        CanvasContextInUse.rotate(this.angle * TO_RADIANS);
 
         if (this.life > (this.lifespan * 0.9)) {
             CanvasContextInUse.globalAlpha = (1 - (this.life / this.lifespan - 0.9) / 0.1);
@@ -627,6 +666,11 @@ function Pyro(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
             }
 
             //on click interaction 
+            if (Math.abs(click.x - this.x) < onClickRadius && Math.abs(click.y - this.y) < onClickRadius) {
+                //console.log(click.x + "mx my" + click.y + this.x + "x y" +  this.y);
+                this.life = 0;
+                Shatter(this.radius);
+            }
 
             this.x += this.dx;
             this.y += this.dy;
@@ -643,8 +687,10 @@ var leafArray = [];
 var fireFlyArray = [];
 var snowFlakeArray = [];
 var pyroArray = [];
+var clickArray = [];
 
 function init() {
+    clickArray = [];
     SpawnLocation();
 
     //Sixth of Seven places that require input for new canvas section
@@ -715,6 +761,15 @@ function init() {
 function animate() {
     requestAnimationFrame(animate);
     CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
+
+    for (let i = 0; i < clickArray.length; i++) {
+        clickArray[i].radius -= 0.01;
+        clickArray[i].update();
+        if (clickArray[i].radius <= 0.3) {
+            clickArray.splice(i, 1);
+            i--;
+        }
+    }
 
     /*     for (var i = 0; i < circleArray.length; i++) {
         circleArray[i].update();
