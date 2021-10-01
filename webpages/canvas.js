@@ -177,6 +177,9 @@ var leafPngArray = [
 
 window.addEventListener('mousemove', function (event) {
     //console.log("y = " + mouse.y + " and x = " + mouse.x);
+    //This needs work because the mouse location is flawed when the window is reduced -jeff
+    //I think it needs to reference the div area the canvas is in so it can determine
+    //the correct location -jeff
     rect = CanvasInUse.getBoundingClientRect();
     mouse.x = event.x - rect.left;
     mouse.y = event.y - rect.top;
@@ -184,6 +187,7 @@ window.addEventListener('mousemove', function (event) {
 
 window.addEventListener('click', function (event) {
     //console.log("y = " + click.y + " and x = " + click.x);
+    //this needs work (see above listener comment) -jeff
     rect = CanvasInUse.getBoundingClientRect();
     click.x = event.x - rect.left;
     click.y = event.y - rect.top;
@@ -196,12 +200,12 @@ window.addEventListener('resize', function () {
 });
 
 //this function creates the shatter effect when clicked on
-function Shatter(radiusObject) {
+function Shatter(objectx, objecty, Objectradius) {
     if (CanvasInUse == canvasSnow) {
         for (let i = 0; i < 10; i++) {
-            var radius = Math.random() * radiusObject + 0.3;
-            var x = click.x;
-            var y = click.y;
+            var radius = Math.random() * Objectradius + 0.3;
+            var x = objectx;
+            var y = objecty;
             var dx = (Math.random() - 0.5) * 3;
             var dy = (Math.random() - 0.5) * 3;
             var rotationalVelocity = (Math.random() - 0.5) * 4;
@@ -211,9 +215,9 @@ function Shatter(radiusObject) {
         }
     } else if (CanvasInUse == canvasPyro) {
         for (let i = 0; i < 10; i++) {
-            var radius = Math.random() * radiusObject + 0.3;
-            var x = click.x;
-            var y = click.y;
+            var radius = Math.random() * Objectradius + 0.3;
+            var x = objectx;
+            var y = objecty;
             var dx = (Math.random() - 0.5) * 3;
             var dy = (Math.random() - 0.5) * 3;
             var rotationalVelocity = (Math.random() - 0.5) * 4;
@@ -570,7 +574,7 @@ function SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespa
             if (Math.abs(click.x - this.x) < onClickRadius && Math.abs(click.y - this.y) < onClickRadius) {
                 //console.log(click.x + "mx my" + click.y + this.x + "x y" +  this.y);
                 this.life = 0;
-                Shatter(this.radius);
+                Shatter(this.x, this.y, this.radius);
             }
 
             this.x += this.dx;
@@ -669,7 +673,7 @@ function Pyro(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
             if (Math.abs(click.x - this.x) < onClickRadius && Math.abs(click.y - this.y) < onClickRadius) {
                 //console.log(click.x + "mx my" + click.y + this.x + "x y" +  this.y);
                 this.life = 0;
-                Shatter(this.radius);
+                Shatter(this.x, this.y, this.radius);
             }
 
             this.x += this.dx;
