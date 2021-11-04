@@ -4,17 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Canvas</title>
-    <style type="text/css">
-        canvas {
-            border: 1px solid black;
-            height: 100%;
-            width: 100%;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body style="margin: 0;">
-    <div style="height: 1000px; margin: 0px;">
+    <div style="height: 1000px;">
         <image src="./img/tree.jpg" style="position: absolute; z-index: -99; height: 100%; width: 100%;"></image>
 
         <canvas id="canvasLeaves"></canvas>
@@ -30,14 +25,61 @@
         <canvas id="canvasSnow"></canvas>
     </div>
     <div style="height: 1000px; position: relative;">
-        <image src="./img/PyroBG.jpg" style="position: absolute; bottom: 0px; z-index: -99; height: auto; width: 100%;"></image>
-        <image src="./img/PyroFGR.png" style="position: absolute; bottom: 0px; z-index: 1; height: auto; width: 100%;"></image>
+        <image src="./img/PyroBG.jpg" style="position: absolute; bottom: 0px; z-index: -99; height: auto; width: 100%;">
+        </image>
+        <image src="./img/PyroFGR.png" style="position: absolute; bottom: 0px; z-index: 1; height: auto; width: 100%;">
+        </image>
 
         <canvas id="canvasPyro" style="z-index: -2;"></canvas>
     </div>
-    <div style="height: 1000px; position: relative;">
+    <div style="height: 1000px;">
+
+        <div class = "pickle swinging">
+            <img src="./img/sticker_4.png">
+        </div>
+        <div>
+            <p class="groovy swinging">I'm pickle rick!</p>
+        </div>
 
     </div>
+
+
+    <div class="parallax-container1" style="height: 1643px; width: auto;">
+        <ul id="scene1">
+            <li class="layer" data-z-index="1" data-depth="0.00"> <img src="./img/BGSummer/BGSummerSky.png"></li>
+            <li class="layer" data-z-index="2" data-depth="0.10"> <img src="./img/BGSummer/BGSummerClouds.png"></li>
+            <li class="layer" data-z-index="3" data-depth="0.20"> <img src="./img/BGSummer/BGSummerMountainTop.png"></li>
+            <li class="layer" data-z-index="4" data-depth="0.30"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></li>
+            <li class="layer" data-z-index="5" data-depth="0.40"> <img src="./img/BGSummer/BGSummerTreeTop.png"></li>
+            <li class="layer" data-z-index="6" data-depth="0.50"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></li>
+            <li class="layer" data-z-index="7" data-depth="0.60"> <img src="./img/BGSummer/BGSummerPlainTop.png"></li>
+            <li class="layer" data-z-index="8" data-depth="0.70"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></li>
+        </ul>
+    </div>
+
+<!--
+    <div class="parallax-container1" id="scene1">
+            <div class="parallax-layer layer-0" data-speed="4" data-z-index="1" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="parallax-layer layer-0" data-speed="8" data-z-index="2" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
+            <div class="parallax-layer layer-0" data-speed="16" data-z-index="3" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
+            <div class="parallax-layer layer-0" data-speed="22" data-z-index="4" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
+            <div class="parallax-layer layer-0" data-speed="44" data-z-index="5" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
+            <div class="parallax-layer layer-0" data-speed="66" data-z-index="6" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
+            <div class="parallax-layer layer-0" data-speed="70" data-z-index="7" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
+            <div class="parallax-layer layer-0" data-speed="2" data-z-index="8" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+    </div>
+-->
+<div>
+    
+
+</div>
     <script src="canvas.js"></script>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/parallax.js-1.5.0/parallax.js"></script>
+    <script>
+        var scene = document.getElementById('scene1');
+        var parallax = new Parallax(scene);
+    </script>
 </body>
+
 </html>
