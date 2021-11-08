@@ -8,12 +8,73 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body style="margin: 0;">
-    <div style="height: 1000px;">
-        <image src="./img/tree.jpg" style="position: absolute; z-index: -99; height: 100%; width: 100%;"></image>
-
-        <canvas id="canvasLeaves"></canvas>
+<body style="margin: 0; background-color:deepskyblue;">  
+    <div id="scene1-buffer">
+        <div style="height: 700px;"></div>
     </div>
+    <div id="scene1">
+        <div class="parallax-container1" style="height: 1643px; width: auto;">
+            <canvas data-1300="top:0%" data-0="top:50%" id="canvasLeaves" style="z-index: 99; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
+            <div class="" data-1300="top:35%" data-0="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="" data-1300="top:-10%" data-0="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
+            <div class="" data-1300="top:0%" data-0="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
+            <div class="" data-1300="top:0%" data-0="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
+            <div class="" data-1300="top:0%" data-0="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
+            <div class="" data-1300="top:0%" data-0="top:30%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
+            <div class="" data-1300="top:0%" data-0="top:40%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
+            <div class="" data-1300="top:0%" data-0="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+        </div>
+    </div>
+    <div id="scene2-buffer">
+        <div style="height: 700px;"></div>
+    </div>
+    <div id="scene2">
+        <div class="parallax-container1" style="height: 1643px; width: auto;">
+            <canvas data-3700="top:0%" data-2400="top:0%" id="canvasFireFlies" style="z-index: 99; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
+            <div class="" data-3700="top:35%" data-2400="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="" data-3700="top:-10%" data-2400="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
+            <div class="" data-3700="top:0%" data-2400="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
+            <div class="" data-3700="top:0%" data-2400="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
+            <div class="" data-3700="top:0%" data-2400="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
+            <div class="" data-3700="top:0%" data-2400="top:30%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
+            <div class="" data-3700="top:0%" data-2400="top:40%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
+            <div class="" data-3700="top:0%" data-2400="top:50%" style="z-index: 4; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+        </div>
+    </div>
+    <div id="scene3-buffer">
+        <div style="height: 700px;"></div>
+    </div>
+    <div id="scene3">
+        <div class="parallax-container1" style="height: 1643px; width: auto;">
+            <canvas data-6000="top:0%" data-4700="top:-42%" id="canvasSnow" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
+            <div class="" data-6000="top:35%" data-4700="top:-43%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="" data-6000="top:-10%" data-4700="top:-43%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:30%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:40%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+        </div>
+    </div>
+</div>
+<div id="scene4-buffer">
+    <div style="height: 700px;"></div>
+</div>
+    <div id="scene4">
+        <div class="parallax-container1" style="height: 1643px; width: auto;">
+            <canvas data-8400="top:0%" data-7100="top:0%" id="canvasPyro" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
+            <div class="" data-8400="top:35%" data-7100="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="" data-8400="top:-10%" data-7100="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:30%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:40%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:50%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+        </div>
+    </div>
+    <!--
     <div style="height: 1000px;">
         <image src="./img/nighttime.jpg" style="position: absolute; z-index: -99; height: 100%; width: 100%;"></image>
 
@@ -32,6 +93,8 @@
 
         <canvas id="canvasPyro" style="z-index: -2;"></canvas>
     </div>
+-->
+<!-- This is a demo of css keyframes
     <div style="height: 1000px;">
 
         <div class = "pickle swinging">
@@ -42,8 +105,9 @@
         </div>
 
     </div>
+-->
 
-
+<!-- This is the first part of the working parallax.js segment
     <div class="parallax-container1" style="height: 1643px; width: auto;">
         <ul id="scene1">
             <li class="layer" data-z-index="1" data-depth="0.00"> <img src="./img/BGSummer/BGSummerSky.png"></li>
@@ -56,29 +120,19 @@
             <li class="layer" data-z-index="8" data-depth="0.70"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></li>
         </ul>
     </div>
-
-<!--
-    <div class="parallax-container1" id="scene1">
-            <div class="parallax-layer layer-0" data-speed="4" data-z-index="1" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerSky.png"></div>
-            <div class="parallax-layer layer-0" data-speed="8" data-z-index="2" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
-            <div class="parallax-layer layer-0" data-speed="16" data-z-index="3" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
-            <div class="parallax-layer layer-0" data-speed="22" data-z-index="4" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
-            <div class="parallax-layer layer-0" data-speed="44" data-z-index="5" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
-            <div class="parallax-layer layer-0" data-speed="66" data-z-index="6" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
-            <div class="parallax-layer layer-0" data-speed="70" data-z-index="7" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
-            <div class="parallax-layer layer-0" data-speed="2" data-z-index="8" data-max-scroll="565"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
-    </div>
 -->
-<div>
-    
-
-</div>
     <script src="canvas.js"></script>
     <script src="./js/jquery-3.6.0.js"></script>
+<!-- This is the second part of the working parallax.js segment    
     <script src="./js/parallax.js-1.5.0/parallax.js"></script>
     <script>
         var scene = document.getElementById('scene1');
         var parallax = new Parallax(scene);
+    </script>	
+-->
+    <script type="text/javascript" src="./js/skrollr.min.js"></script>
+	<script type="text/javascript">
+	    var s = skrollr.init();
     </script>
 </body>
 

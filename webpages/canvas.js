@@ -17,10 +17,10 @@ CanvasInUse.width = window.innerWidth;
 CanvasInUse.height = window.innerHeight;
 
 this.window.addEventListener('scroll', function () {
-    //console.log("Scroll = " + window.scrollY);
+    console.log("Scroll = " + window.scrollY);
     //Second of Seven places that require input for new canvas section
     ScrollDistance = window.scrollY;
-    if (ScrollDistance < 500) {
+    if (ScrollDistance < 2000) {
         if (IsLoaded != 0) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 0;
@@ -28,7 +28,7 @@ this.window.addEventListener('scroll', function () {
             CanvasContextInUse = cL;
             init();
         }
-    } else if (ScrollDistance < 1500 && ScrollDistance > 500) {
+    } else if (ScrollDistance < 4200 && ScrollDistance > 2000) {
         if (IsLoaded != 1) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 1;
@@ -38,7 +38,7 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance < 2500 && ScrollDistance > 1500) {
+    } else if (ScrollDistance < 6600 && ScrollDistance > 4200) {
         if (IsLoaded != 2) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 2;
@@ -48,7 +48,7 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance > 2500) {
+    } else if (ScrollDistance > 6600) {
         if (IsLoaded != 3) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 3;
@@ -94,24 +94,24 @@ function SpawnLocation() {
     if (CanvasInUse == canvasLeaves) {
         //tree location based on window width and height
         spawnxdiv = 4;
-        spawnxplus = innerWidth / 3; //innerWidth / X
-        spawnydiv = 3;
-        spawnyplus = 0; //innerHeight / X
+        spawnxplus = innerWidth / 8 * 3; //innerWidth / X
+        spawnydiv = 4;
+        spawnyplus = innerHeight / 4 * 2.25; //innerHeight / X
     } else if (CanvasInUse == canvasFireFlies) {
         spawnxdiv = 1;
         spawnxplus = 0; //innerWidth / X
         spawnydiv = 1;
         spawnyplus = 0; //innerHeight / X        
     } else if (CanvasInUse == canvasSnow) {
-        spawnxdiv = 1;
-        spawnxplus = 0; //innerWidth / X
-        spawnydiv = 3;
-        spawnyplus = 0; //innerHeight / X        
+        spawnxdiv = 0.8;
+        spawnxplus = innerWidth / 10; //innerWidth / X
+        spawnydiv = 2.8;
+        spawnyplus = innerHeight / 20; //innerHeight / X        
     } else if (CanvasInUse == canvasPyro) {
         spawnxdiv = 1;
         spawnxplus = 0; //innerWidth / X
         spawnydiv = 10;
-        spawnyplus = innerHeight * 0.8; //innerHeight / X        
+        spawnyplus = innerHeight * 0.7; //innerHeight / X        
     }
 }
 
