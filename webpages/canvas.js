@@ -9,9 +9,9 @@ var canvasPyro = document.getElementById('canvasPyro');
 var cP = canvasPyro.getContext('2d');
 
 var ScrollDistance = 0;
-var CanvasInUse = canvasLeaves;
-var CanvasContextInUse = cL;
-var IsLoaded = 0;
+var CanvasInUse = canvasFireFlies;
+var CanvasContextInUse = cF;
+var IsLoaded = 1;
 
 CanvasInUse.width = window.innerWidth;
 CanvasInUse.height = window.innerHeight;
@@ -20,12 +20,24 @@ this.window.addEventListener('scroll', function () {
     console.log("Scroll = " + window.scrollY);
     //Second of Seven places that require input for new canvas section
     ScrollDistance = window.scrollY;
-    if (ScrollDistance < 2000) {
+    if (ScrollDistance <= 1300) {
+        if (IsLoaded != 1) {
+            CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
+            IsLoaded = 1;
+            CanvasInUse = canvasFireFlies;
+            CanvasContextInUse = cF;
+            CanvasInUse.width = window.innerWidth;
+            CanvasInUse.height = window.innerHeight;
+            init();
+        }
+    } else if (ScrollDistance < 2000 && ScrollDistance > 1300) {
         if (IsLoaded != 0) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 0;
             CanvasInUse = canvasLeaves;
             CanvasContextInUse = cL;
+            CanvasInUse.width = window.innerWidth;
+            CanvasInUse.height = window.innerHeight;
             init();
         }
     } else if (ScrollDistance < 4200 && ScrollDistance > 2000) {
