@@ -20,7 +20,7 @@ this.window.addEventListener('scroll', function () {
     console.log("Scroll = " + window.scrollY);
     //Second of Seven places that require input for new canvas section
     ScrollDistance = window.scrollY;
-    if (ScrollDistance <= 1300) {
+    if (ScrollDistance <= 1400) {
         if (IsLoaded != 1) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 1;
@@ -30,7 +30,7 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance < 2000 && ScrollDistance > 1300) {
+    } else if (ScrollDistance < 2000 && ScrollDistance > 1400) {
         if (IsLoaded != 0) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 0;
@@ -41,21 +41,21 @@ this.window.addEventListener('scroll', function () {
             init();
         }
     } else if (ScrollDistance < 4200 && ScrollDistance > 2000) {
-        if (IsLoaded != 1) {
-            CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
-            IsLoaded = 1;
-            CanvasInUse = canvasFireFlies;
-            CanvasContextInUse = cF;
-            CanvasInUse.width = window.innerWidth;
-            CanvasInUse.height = window.innerHeight;
-            init();
-        }
-    } else if (ScrollDistance < 6600 && ScrollDistance > 4200) {
         if (IsLoaded != 2) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 2;
             CanvasInUse = canvasSnow;
             CanvasContextInUse = cS;
+            CanvasInUse.width = window.innerWidth;
+            CanvasInUse.height = window.innerHeight;
+            init();
+        }
+    } else if (ScrollDistance < 6600 && ScrollDistance > 4200) {
+        if (IsLoaded != 1) {
+            CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
+            IsLoaded = 1;
+            CanvasInUse = canvasFireFlies;
+            CanvasContextInUse = cF;
             CanvasInUse.width = window.innerWidth;
             CanvasInUse.height = window.innerHeight;
             init();
@@ -92,7 +92,7 @@ var radius = 1;
 var lastTime = 0;
 var interval = 1000/60; //60 fps
 var timer = 0;
-var motionCompensation = 3.25; //compentation value for fps change
+var motionCompensation = 2; //compentation value for fps change
 var onClickRadius = 20;
 var rect = CanvasInUse.getBoundingClientRect();
 var TO_RADIANS = Math.PI / 180;
@@ -105,10 +105,10 @@ var spawnyplus = 0; //innerHeight / X
 function SpawnLocation() {
     if (CanvasInUse == canvasLeaves) {
         //tree location based on window width and height
-        spawnxdiv = 4;
-        spawnxplus = innerWidth / 8 * 3; //innerWidth / X
-        spawnydiv = 4;
-        spawnyplus = innerHeight / 4 * 2.25; //innerHeight / X
+        spawnxdiv = 5;
+        spawnxplus = innerWidth / 5 * 2; //innerWidth / X
+        spawnydiv = 5;
+        spawnyplus = innerHeight / 5 * 3.25; //innerHeight / X
     } else if (CanvasInUse == canvasFireFlies) {
         spawnxdiv = 1;
         spawnxplus = 0; //innerWidth / X
@@ -189,6 +189,7 @@ var leafPngArray = [
     './leaves/leaf_5.png',
     './leaves/leaf_6.png',
     './leaves/leaf_7.png',
+    './leaves/leaf_8.png',
 ]
 
 window.addEventListener('mousemove', function (event) {
@@ -351,9 +352,9 @@ function Leaf(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
                 this.dx = -this.dx;
             }
 
-            if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+            if (this.y - this.radius < 0) {
                 this.dy = -this.dy;
-            }
+            } //else if (this.y + this.radius > innerHeight) {this.dy = -this.dy;}
 
             if (this.dy > 10 * motionCompensation || this.dy < -10 * motionCompensation) {
                 this.dy = this.dy / 2;
