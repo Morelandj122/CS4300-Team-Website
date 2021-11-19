@@ -40,7 +40,7 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance < 4200 && ScrollDistance > 2000) {
+    } else if (ScrollDistance < 3900 && ScrollDistance > 2000) {
         if (IsLoaded != 2) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 2;
@@ -50,7 +50,7 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance < 6600 && ScrollDistance > 4200) {
+    } else if (ScrollDistance < 5500 && ScrollDistance >= 3900) {
         if (IsLoaded != 1) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 1;
@@ -60,12 +60,22 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance > 6600) {
+    } else if (ScrollDistance <= 6100 && ScrollDistance >= 5500) {
         if (IsLoaded != 3) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 3;
             CanvasInUse = canvasPyro;
             CanvasContextInUse = cP;
+            CanvasInUse.width = window.innerWidth;
+            CanvasInUse.height = window.innerHeight;
+            init();
+        }
+    } else if (ScrollDistance > 6100) {
+        if (IsLoaded != 1) {
+            CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
+            IsLoaded = 1;
+            CanvasInUse = canvasFireFlies;
+            CanvasContextInUse = cF;
             CanvasInUse.width = window.innerWidth;
             CanvasInUse.height = window.innerHeight;
             init();
