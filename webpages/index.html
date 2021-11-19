@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body style="margin: 0; background-color:deepskyblue;">  
+<body style="margin: 0; background-color:black;">  
     <div id="scene1-buffer">
         <div style="height: 700px;"></div>
     </div>
     <div id="scene1">
-        <div class="parallax-container1" style="height: 1643px; width: auto;">
+        <div class="parallax-container1" style="height: 1700px; width: auto;">
             <canvas data-1300="top:0%" data-0="top:50%" id="canvasLeaves" style="z-index: 5; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="" data-1300="top:35%" data-0="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="" data-1300="opacity: 0; top:35%" data-0="opacity: 1; top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
+            <div class="" data-1300="opacity: 1; top:35%" data-0="opacity: 0; top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="" data-1300="opacity: 0; top:-10%" data-0="opacity: 1; top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
+            <div class="" data-1300="opacity: 0; top:-10%" data-800="" data-0="opacity: 1; top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
+            <div class="" data-1300="top:-35%" data-0="top:05%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkySun.png"></div>
             <div class="" data-1300="top:-10%" data-0="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
             <div class="" data-1300="top:0%" data-0="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
             <div class="" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
@@ -24,25 +28,25 @@
             <div class="" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:40%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
             <div class="" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
             <div class="" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTree.png"></div>
-            <div class="" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:13%" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerBush.png"></div>
-            <!--This is the autumn change-->
+            <div class="" data-1500="opacity: 0;" data-1400="opacity: 1;" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerBush.png"></div>
+            <!--This is the Autumn change-->
             <div class="" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallMountainBottom.png"></div>
             <div class="" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallTreeTop.png"></div>
             <div class="" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallTreeBottom.png"></div>
             <div class="" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallPlainTop.png"></div>
             <div class="" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallPlainBottom.png"></div>
             <div class="" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallTree.png"></div>
-            <div class="" data-1500="opacity: 1;" data-1400="opacity: 0;" data-1300="top:13%" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallBush.png"></div>
+            <div class="" data-1500="opacity: 1;" data-1400="opacity: 0;" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallBush.png"></div>
         </div>
     </div>
     <div id="scene2-buffer">
         <div style="height: 700px;"></div>
     </div>
     <div id="scene2">
-        <div class="parallax-container1" style="height: 1643px; width: auto;">
-            <canvas data-3700="top:0%" data-2400="top:0%" id="canvasSnow" style="z-index: 99; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="" data-3700="top:35%" data-2400="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterSky.png"></div>
-            <div class="" data-3700="top:-10%" data-2400="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterClouds.png"></div>
+        <div class="parallax-container1" style="height: 1700px; width: auto;">
+            <canvas data-3700="top:10%" data-2400="top:-45%" id="canvasSnow" style="z-index: 4; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
+            <div class="" data-3700="top:10%" data-2400="top:-45%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterClouds.png"></div>
+            <div class="" data-3700="top:35%" data-2400="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
             <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterMountainTop.png"></div>
             <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterMountainBottom.png"></div>
             <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterTreeTop.png"></div>
@@ -50,7 +54,7 @@
             <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:40%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterPlainTop.png"></div>
             <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:50%" style="z-index: 4; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterPlainBottom.png"></div>
             <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:50%" style="z-index: 4; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterTree.png"></div>
-            <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:13%" data-2400="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterBush.png"></div>
+            <div class="" data-3900="opacity: 0;" data-3800="opacity: 1;" data-2400="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterBush.png"></div>
             <!--This is the Spring change-->
             <div class="" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringMountainTop.png"></div>
             <div class="" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringMountainBottom.png"></div>
@@ -59,23 +63,32 @@
             <div class="" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringPlainTop.png"></div>
             <div class="" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringPlainBottom.png"></div>
             <div class="" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringTree.png"></div>
-            <div class="" data-3900="opacity: 1;" data-3800="opacity: 0;" data-1300="top:13%" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringBush.png"></div>
+            <div class="" data-3900="opacity: 1;" data-3800="opacity: 0;" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringBush.png"></div>
         </div>
     </div>
     <div id="scene3-buffer">
-        <div style="height: 700px;"></div>
+        <div style="height: 600px;"></div>
     </div>
     <div id="scene3">
         <div class="parallax-container1" style="height: 1643px; width: auto;">
-            <canvas data-6000="top:0%" data-4700="top:-42%" id="canvasFireFlies" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="" data-6000="top:35%" data-4700="top:-43%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
-            <div class="" data-6000="top:-10%" data-4700="top:-43%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
-            <div class="" data-6000="top:0%" data-4700="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
-            <div class="" data-6000="top:0%" data-4700="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
-            <div class="" data-6000="top:0%" data-4700="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
-            <div class="" data-6000="top:0%" data-4700="top:30%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
-            <div class="" data-6000="top:0%" data-4700="top:40%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
-            <div class="" data-6000="top:0%" data-4700="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+            <canvas data-6000="top:0%" data-4700="top:0%" id="canvasPyro" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
+            <div class="" data-6000="top:35%" data-4700="top:-43%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
+            <div class="" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
+            <div class="" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainTop.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainBottom.png"></div>
+            <div class="" data-6000="top:0%" data-4700="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTreeTop.png"></div>
+            <div class="" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:30%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTreeBottom.png"></div>
+            <div class="" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:40%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFirePlainTop.png"></div>
+            <div class="" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:50%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFirePlainBottom.png"></div>
+            <div class="" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:50%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTree.png"></div>
+            <div class="" data-6200="opacity: 0;" data-6100="opacity: 1;" data-4700="top:13%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireBush.png"></div>
+            <!--This is the Fire change-->
+            <div class="" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTreeBottom.png"></div>
+            <div class="" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainTop.png"></div>
+            <div class="" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainBottom.png"></div>
+            <div class="" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTree.png"></div>
+            <div class="" data-6200="opacity: 1;" data-6100="opacity: 0;" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalBush.png"></div>
         </div>
     </div>
 </div>
@@ -84,73 +97,36 @@
 </div>
     <div id="scene4">
         <div class="parallax-container1" style="height: 1643px; width: auto;">
-            <canvas data-8400="top:0%" data-7100="top:0%" id="canvasPyro" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="" data-8400="top:35%" data-7100="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <canvas data-8400="top:0%" data-7100="top:42%" id="canvasFireFlies" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
+            <div class="" data-8400="top:30%" data-7100="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
+            <div class="" data-8400="top:-10%" data-7100="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
+            <div class="" data-8400="top:-10%" data-7100="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
             <div class="" data-8400="top:-10%" data-7100="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
-            <div class="" data-8400="top:0%" data-7100="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
-            <div class="" data-8400="top:0%" data-7100="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
-            <div class="" data-8400="top:0%" data-7100="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
-            <div class="" data-8400="top:0%" data-7100="top:30%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
-            <div class="" data-8400="top:0%" data-7100="top:40%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
-            <div class="" data-8400="top:0%" data-7100="top:50%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainTop.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainBottom.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTreeTop.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:30%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTreeBottom.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:40%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainTop.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainBottom.png"></div>
+            <div class="" data-8400="top:0%" data-7100="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTree.png"></div>
+            <div class="" data-0="top:13%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalBush.png"></div>
+            <!--This is the Life change-->
+            <div class="" data-8600="opacity: 1;" data-8500="opacity: 0;" data-0="top:0%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTreeLife.png"></div>
         </div>
     </div>
-    <!--
-    <div style="height: 1000px;">
-        <image src="./img/nighttime.jpg" style="position: absolute; z-index: -99; height: 100%; width: 100%;"></image>
-
-        <canvas id="canvasFireFlies"></canvas>
+    <div>        
+    <div style="height: 400px;">
+        <p style="color: white; text-align: center; padding-top: 15%;">
+            Thanks to all from Jeffrey Moreland and his team:<br/>
+            Zachary Tubbs II<br/>
+            Francis Vandinh<br/>
+            Joana Mucogllava<br/>
+            Daniel Sanchez<br/>
+        </p>
     </div>
-    <div style="height: 1000px;">
-        <image src="./img/snow.jpg" style="position: absolute; z-index: -99; height: 100%; width: 100%;"></image>
-
-        <canvas id="canvasSnow"></canvas>
     </div>
-    <div style="height: 1000px; position: relative;">
-        <image src="./img/PyroBG.jpg" style="position: absolute; bottom: 0px; z-index: -99; height: auto; width: 100%;">
-        </image>
-        <image src="./img/PyroFGR.png" style="position: absolute; bottom: 0px; z-index: 1; height: auto; width: 100%;">
-        </image>
-
-        <canvas id="canvasPyro" style="z-index: -2;"></canvas>
-    </div>
--->
-<!-- This is a demo of css keyframes
-    <div style="height: 1000px;">
-
-        <div class = "pickle swinging">
-            <img src="./img/sticker_4.png">
-        </div>
-        <div>
-            <p class="groovy swinging">I'm pickle rick!</p>
-        </div>
-
-    </div>
--->
-
-<!-- This is the first part of the working parallax.js segment
-    <div class="parallax-container1" style="height: 1643px; width: auto;">
-        <ul id="scene1">
-            <li class="layer" data-z-index="1" data-depth="0.00"> <img src="./img/BGSummer/BGSummerSky.png"></li>
-            <li class="layer" data-z-index="2" data-depth="0.10"> <img src="./img/BGSummer/BGSummerClouds.png"></li>
-            <li class="layer" data-z-index="3" data-depth="0.20"> <img src="./img/BGSummer/BGSummerMountainTop.png"></li>
-            <li class="layer" data-z-index="4" data-depth="0.30"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></li>
-            <li class="layer" data-z-index="5" data-depth="0.40"> <img src="./img/BGSummer/BGSummerTreeTop.png"></li>
-            <li class="layer" data-z-index="6" data-depth="0.50"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></li>
-            <li class="layer" data-z-index="7" data-depth="0.60"> <img src="./img/BGSummer/BGSummerPlainTop.png"></li>
-            <li class="layer" data-z-index="8" data-depth="0.70"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></li>
-        </ul>
-    </div>
--->
     <script src="canvas.js"></script>
     <script src="./js/jquery-3.6.0.js"></script>
-<!-- This is the second part of the working parallax.js segment    
-    <script src="./js/parallax.js-1.5.0/parallax.js"></script>
-    <script>
-        var scene = document.getElementById('scene1');
-        var parallax = new Parallax(scene);
-    </script>	
--->
     <script type="text/javascript" src="./js/skrollr.min.js"></script>
 	<script type="text/javascript">
 	    var s = skrollr.init();
