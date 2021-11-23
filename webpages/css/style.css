@@ -1,3 +1,17 @@
+@font-face {
+  font-family: kingThings;
+  src: url(../Kingthings\ Annexx.ttf);
+}
+h1 {
+  font-family: kingThings;
+}
+@font-face {
+  font-family: chopinScript;
+  src: url(../ChopinScript.ttf);
+}
+p {
+  font-family: chopinScript;
+}
 @keyframes swinging {
    20% { transform: rotate(15deg); } 
    40% { transform: rotate(-10deg); } 
@@ -13,6 +27,26 @@
     80% { -webkit-transform: rotate(-5deg); } 
     100% { -webkit-transform: rotate(0deg); } 
  }
+ @keyframes rainfall {
+  0% {
+      -webkit-opacity: 0;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      transform: translate(0, 0);
+  }
+  50% {
+      -webkit-opacity: 1;
+      opacity: 1;
+      filter: alpha(opacity=100);
+      transform: translate(-50px, 200px);
+  }
+  100% {
+      -webkit-opacity: 0;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      transform: translate(-100px, 400px);
+  }
+}
  @keyframes rainfall1 {
     from  {left:100px; top:-100px; opacity:1;}
     to  {left:-100px; top:100px; opacity:0;}
@@ -50,16 +84,54 @@
      100% { opacity:1; }
    }
 .animate-rainfall1{    
-    -webkit-animation: rainfall1 0.5s infinite;
-     animation: rainfall1 0.5s infinite;
-     -webkit-animation-duration: 0.5s;
-     animation-duration: 0.5s; 
+    -webkit-animation: rainfall 0.48s linear infinite;
+     animation: rainfall 0.48s linear infinite;
 }
 .animate-rainfall2{    
-    -webkit-animation: rainfall2 0.6s infinite;
-     animation: rainfall2 0.6s infinite;
-     -webkit-animation-duration: 0.6s;
-     animation-duration: 0.6s;
+    -webkit-animation: rainfall 0.48s linear 0.12s infinite;
+     animation: rainfall 0.48s linear 0.12s infinite;
+}
+.animate-rainfall3{    
+    -webkit-animation: rainfall 0.48s linear 0.24s infinite;
+     animation: rainfall 0.48s linear 0.24s infinite;
+}
+.animate-rainfall4{    
+    -webkit-animation: rainfall 0.48s linear 0.36s infinite;
+     animation: rainfall 0.48s linear 0.36s infinite;
+}
+.rain1 {
+  top: 275px;
+  left: 100px;
+}
+.rain2 {
+  top: 100px;
+  left: -100px;
+}
+.rain3 {
+  top: 0px;
+  left: -300px;
+}
+.rain4 {
+  top: 700px;
+  left: 800px;
+}
+.navbar {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 12;
+  height: 100%;
+  -webkit-transition: opacity .6s ease-out, right .6s ease-out;
+  -moz-transition: opacity .6s ease-out, right .6s ease-out;
+  -ms-transition: opacity .6s ease-out, right .6s ease-out;
+  -o-transition: opacity .6s ease-out, right .6s ease-out;
+  transition: opacity .6s ease-out, right .6s ease-out;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity=100)
 }
 .animate-flicker1 {
     -webkit-animation: flickerAnimation1 3s infinite;
