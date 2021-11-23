@@ -12,33 +12,38 @@
 <body style="background-color:black;"> 
 <div class="grid justify-center overflow-hidden">
     <div id="scene1-buffer">
-        <div style="height: 700px; width: 1767px;"></div>
+        <div class="flex justify-center" style="height: 700px; width: 1767px;">
+                <h1 class="absolute z-20 text-9xl self-center font-medium tracking-widest text-green-600">7SEASONS</h1>
+                <h2 class="absolute z-20 text-3xl self-end font-medium tracking-widest animate-flicker3 text-purple-900">Scroll Down</h2>
+        </div>
     </div>
     <div id="scene1">
         <div class="parallax-container1" style="height: 1700px; width: 1767px;">
-            <canvas class="absolute" data-1300="top:0%" data-0="top:50%" id="canvasLeaves" style="z-index: 5; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="min-w-max absolute" data-1300="opacity: 0; top:35%" data-0="opacity: 1; top:-45%" style="z-index: -1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
-            <div class="min-w-max absolute" data-1300="opacity: 1; top:35%" data-0="opacity: 0; top:-45%" style="z-index: -1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
-            <div class="min-w-max absolute animate-flicker3" data-1300="opacity: 0; top:-10%" data-0="opacity: 1; top:-45%" style="z-index: -1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
-            <div class="min-w-max absolute animate-flicker4" data-1300="opacity: 0; top:-10%" data-800="" data-0="opacity: 1; top:-45%" style="z-index: -1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
-            <div class="min-w-max absolute" data-1300="top:-35%" data-0="top:05%" style="z-index: -1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkySun.png"></div>
-            <div class="min-w-max absolute" data-1300="top:-10%" data-0="top:-45%" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
-            <div class="min-w-max absolute" data-1300="top:0%" data-0="top:00%" style=""> <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:10%" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:20%" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:30%" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:40%" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:50%" style="z-index: 1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:50%" style="z-index: 1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerTree.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 0;" data-1400="opacity: 1;" data-0="top:13%" style="z-index: 6; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerBush.png"></div>
+            <canvas class="absolute z-20" data-1300="top:0%" data-0="top:50%" id="canvasLeaves" ></canvas>
+            <div class="min-w-max absolute z-0" data-1300="opacity: 0; top:35%" data-0="opacity: 1; top:-45%" > <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
+            <div class="min-w-max absolute z-0" data-1300="opacity: 1; top:35%" data-0="opacity: 0; top:-45%" > <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="min-w-max absolute z-0 animate-flicker3" data-1300="opacity: 0; top:-10%" data-0="opacity: 1; top:-45%" > <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
+            <div class="min-w-max absolute z-0 animate-flicker4" data-1300="opacity: 0; top:-10%" data-800="" data-0="opacity: 1; top:-45%" > <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
+            <div class="min-w-max absolute z-0" data-1300="top:-35%" data-0="top:05%" > <img src="./img/BGSummer/BGSummerSkySun.png"></div>
+            <div class="min-w-max absolute z-0" data-1300="top:-10%" data-0="top:-45%" > <img src="./img/BGSummer/BGSummerClouds.png"></div>
+            <div class="min-w-max absolute z-10" data-1300="top:0%" data-0="top:00%" > <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:10%" > <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:20%" > <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:30%" > <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:40%" > <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:50%" > <img src="./img/BGSummer/BGSummerPlainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:50%" > <img src="./img/BGSummer/BGSummerTree.png"></div>
+            <div class="min-w-max absolute z-40" data-1500="opacity: 0;" data-1400="opacity: 1;" data-0="top:13%" > <img src="./img/BGSummer/BGSummerBush.png"></div>
+            <h1 class="absolute z-50 text-9xl bottom-0 left-1/3 font-medium tracking-widest text-green-900" data-1500="opacity: 0;" data-1400="opacity: 1;" >SUMMER</h1>
             <!--This is the Autumn change-->
-            <div class="min-w-max absolute" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallMountainBottom.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallTreeTop.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallTreeBottom.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallPlainTop.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallPlainBottom.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallTree.png"></div>
-            <div class="min-w-max absolute" data-1500="opacity: 1;" data-1400="opacity: 0;" data-0="top:13%" style="z-index: 6; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFall/BGFallBush.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFall/BGFallMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFall/BGFallTreeTop.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFall/BGFallTreeBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFall/BGFallPlainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFall/BGFallPlainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 1;" data-1400="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFall/BGFallTree.png"></div>
+            <div class="min-w-max absolute z-40" data-1500="opacity: 1;" data-1400="opacity: 0;" data-0="top:13%" > <img src="./img/BGFall/BGFallBush.png"></div>
+            <h1 class="absolute z-50 text-9xl bottom-0 left-1/3 font-medium tracking-widest text-yellow-900" data-1500="opacity: 1;" data-1400="opacity: 0;" >FALL</h1>
         </div>
     </div>
     <div id="scene2-buffer">
@@ -46,30 +51,32 @@
     </div>
     <div id="scene2">
         <div class="parallax-container1" style="height: 1700px; width: 1767px;">
-            <canvas data-3700="top:10%" data-2400="top:-45%" id="canvasSnow" style="z-index: 4; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="min-w-max absolute" data-3700="top:10%" data-2400="top:-45%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterClouds.png"></div>
-            <div class="min-w-max absolute" data-3700="top:35%" data-2400="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSky.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterMountainTop.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterMountainBottom.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterTreeTop.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:30%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterTreeBottom.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:40%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterPlainTop.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:50%" style="z-index: 4; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterPlainBottom.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:50%" style="z-index: 4; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterTree.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 0;" data-3800="opacity: 1;" data-2400="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGWinter/BGWinterBush.png"></div>
+            <canvas class="absolute z-20" data-3700="top:10%" data-2400="top:-45%" id="canvasSnow" ></canvas>
+            <div class="min-w-max absolute z-0" data-3700="top:35%" data-2400="top:-45%" > <img src="./img/BGSummer/BGSummerSky.png"></div>
+            <div class="min-w-max absolute z-30" data-3700="top:10%" data-2400="top:-45%" > <img src="./img/BGWinter/BGWinterClouds.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:00%" > <img src="./img/BGWinter/BGWinterMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:10%" > <img src="./img/BGWinter/BGWinterMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:20%" > <img src="./img/BGWinter/BGWinterTreeTop.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:30%" > <img src="./img/BGWinter/BGWinterTreeBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:40%" > <img src="./img/BGWinter/BGWinterPlainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:50%" > <img src="./img/BGWinter/BGWinterPlainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:50%" > <img src="./img/BGWinter/BGWinterTree.png"></div>
+            <div class="min-w-max absolute z-30" data-3900="opacity: 0;" data-3800="opacity: 1;" data-2400="top:13%" > <img src="./img/BGWinter/BGWinterBush.png"></div>
+            <h1 class="absolute z-50 text-9xl bottom-0 left-1/3 font-medium tracking-widest text-blue-900" data-3900="opacity: 0;" data-3800="opacity: 1;" >WINTER</h1>
             <!--This is the Spring change-->
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringMountainTop.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringMountainBottom.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringTreeTop.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringTreeBottom.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringPlainTop.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringPlainBottom.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringTree.png"></div>
-            <div class="min-w-max absolute rain1 animate-rainfall1 align-self-left" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1;"> <img src="./img/BGSpring/BGSpringRain.png"></div>
-            <div class="min-w-max absolute rain1 animate-rainfall1 align-self-right" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1;"> <img src="./img/BGSpring/BGSpringRain.png"></div>
-            <div class="min-w-max absolute rain2 animate-rainfall2 align-self-left" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1;"> <img src="./img/BGSpring/BGSpringRain.png"></div>
-            <div class="min-w-max absolute rain2 animate-rainfall2 align-self-right" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 1;"> <img src="./img/BGSpring/BGSpringRain.png"></div>
-            <div class="min-w-max absolute" data-3900="opacity: 1;" data-3800="opacity: 0;" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSpring/BGSpringBush.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringTreeTop.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringTreeBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringPlainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringPlainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 1;" data-3800="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringTree.png"></div>
+            <div class="          absolute z-10 rain1 animate-rainfall1 align-self-left" data-3900="opacity: 1;" data-3800="opacity: 0;" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringRain.png"></div>
+            <div class="          absolute z-10 rain2 animate-rainfall2 align-self-right" data-3900="opacity: 1;" data-3800="opacity: 0;" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringRain.png"></div>
+            <div class="          absolute z-10 rain3 animate-rainfall3 align-self-left" data-3900="opacity: 1;" data-3800="opacity: 0;" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringRain.png"></div>
+            <div class="          absolute z-10 rain4 animate-rainfall4 align-self-right" data-3900="opacity: 1;" data-3800="opacity: 0;" data-0="opacity: 0;" > <img src="./img/BGSpring/BGSpringRain.png"></div>
+            <div class="min-w-max absolute z-30" data-3900="opacity: 1;" data-3800="opacity: 0;" data-0="top:13%" > <img src="./img/BGSpring/BGSpringBush.png"></div>
+            <h1 class="absolute z-50 text-9xl bottom-0 left-1/3 font-medium tracking-widest text-pink-900" data-3900="opacity: 1;" data-3800="opacity: 0;" >SPRING</h1>
         </div>
     </div>
     <div id="scene3-buffer">
@@ -77,26 +84,29 @@
     </div>
     <div id="scene3">
         <div class="parallax-container1" style="height: 1643px; width: 1767px;">
-            <canvas data-6000="top:0%" data-4700="top:0%" id="canvasPyro" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="min-w-max absolute" data-6000="top:35%" data-4700="top:-43%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
-            <div class="min-w-max absolute animate-flicker3" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
-            <div class="min-w-max absolute animate-flicker4" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
-            <div class="min-w-max absolute" data-6000="top:0%" data-4700="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainTop.png"></div>
-            <div class="min-w-max absolute" data-6000="top:0%" data-4700="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainBottom.png"></div>
-            <div class="min-w-max absolute" data-6000="top:0%" data-4700="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTreeTop.png"></div>
-            <div class="min-w-max absolute embers1 animate-flicker1" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:20%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireEmber1.png"></div>
-            <div class="min-w-max absolute embers2 animate-flicker2" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:20%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireEmber2.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:30%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTreeBottom.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:40%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFirePlainTop.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:50%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFirePlainBottom.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:50%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTree.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 0;" data-6100="opacity: 1;" data-4700="top:13%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireBush.png"></div>
+            <canvas class="absolute z-20" data-6000="top:-20%" data-4700="top:-45%" id="canvasMeteor" ></canvas>
+            <canvas class="absolute z-20" data-6000="top:0%" data-4700="top:0%" id="canvasPyro" ></canvas>
+            <div class="min-w-max absolute z-0" data-6000="top:35%" data-4700="top:-43%" > <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
+            <div class="min-w-max absolute z-0 animate-flicker3" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" > <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
+            <div class="min-w-max absolute z-0 animate-flicker4" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" > <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
+            <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:00%" > <img src="./img/BGFire/BGFireMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:10%" > <img src="./img/BGFire/BGFireMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:20%" > <img src="./img/BGFire/BGFireTreeTop.png"></div>
+            <div class="min-w-max absolute z-10 embers1 animate-flicker1" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:20%"> <img src="./img/BGFire/BGFireEmber1.png"></div>
+            <div class="min-w-max absolute z-10 embers2 animate-flicker2" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:20%"> <img src="./img/BGFire/BGFireEmber2.png"></div>
+            <div class="min-w-max absolute z-20" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:30%" > <img src="./img/BGFire/BGFireTreeBottom.png"></div>
+            <div class="min-w-max absolute z-20" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:40%" > <img src="./img/BGFire/BGFirePlainTop.png"></div>
+            <div class="min-w-max absolute z-20" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:50%" > <img src="./img/BGFire/BGFirePlainBottom.png"></div>
+            <div class="min-w-max absolute z-20" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:50%" > <img src="./img/BGFire/BGFireTree.png"></div>
+            <div class="min-w-max absolute z-30" data-6200="opacity: 0;" data-6100="opacity: 1;" data-4700="top:13%" > <img src="./img/BGFire/BGFireBush.png"></div>
+            <h1 class="absolute z-50 text-9xl bottom-0 left-1/3 font-medium tracking-widest text-white" data-6200="opacity: 0;" data-6100="opacity: 1;" >LIFE</h1>
             <!--This is the Fire change-->
-            <div class="min-w-max absolute" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTreeBottom.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainTop.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainBottom.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTree.png"></div>
-            <div class="min-w-max absolute" data-6200="opacity: 1;" data-6100="opacity: 0;" data-0="top:13%" style="z-index: 6; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalBush.png"></div>
+            <div class="min-w-max absolute z-10" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFinal/BGFinalTreeBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFinal/BGFinalPlainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFinal/BGFinalPlainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-6200="opacity: 1;" data-6100="opacity: 0; top:0%" data-0="opacity: 0;" > <img src="./img/BGFinal/BGFinalTree.png"></div>
+            <div class="min-w-max absolute z-30" data-6200="opacity: 1;" data-6100="opacity: 0;" data-0="top:13%" > <img src="./img/BGFinal/BGFinalBush.png"></div>
+            <h1 class="absolute z-50 text-9xl bottom-0 left-1/3 font-medium tracking-widest text-red-900" data-6200="opacity: 1;" data-6100="opacity: 0;" >DEATH</h1>
         </div>
     </div>
 <div id="scene4-buffer">
@@ -104,32 +114,151 @@
 </div>
     <div id="scene4">
         <div class="parallax-container1" style="height: 1643px; width: 1767px;">
-            <canvas data-8400="top:0%" data-7100="top:42%" id="canvasFireFlies" style="z-index: 2; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"></canvas>
-            <div class="min-w-max absolute" data-8400="top:30%" data-7100="top:-45%" style="z-index: -1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
-            <div class="min-w-max absolute animate-flicker3" data-8400="top:-10%" data-7100="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
-            <div class="min-w-max absolute animate-flicker4" data-8400="top:-10%" data-7100="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
-            <div class="min-w-max absolute" data-8400="top:-10%" data-7100="top:-45%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGSummer/BGSummerClouds.png"></div>
-            <div class="min-w-max absolute" data-8400="top:0%" data-7100="top:00%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainTop.png"></div>
-            <div class="min-w-max absolute" data-8400="top:0%" data-7100="top:10%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireMountainBottom.png"></div>
-            <div class="min-w-max absolute" data-8400="top:0%" data-7100="top:20%" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFire/BGFireTreeTop.png"></div>
-            <div class="min-w-max absolute" data-8400="top:0%" data-7100="top:30%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTreeBottom.png"></div>
-            <div class="min-w-max absolute" data-8400="top:0%" data-7100="top:40%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainTop.png"></div>
-            <div class="min-w-max absolute" data-8400="top:0%" data-7100="top:50%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalPlainBottom.png"></div>
-            <div class="min-w-max absolute" data-0="top:13%" style="z-index: 3; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalBush.png"></div>
+            <canvas class="absolute z-20" data-8400="top:0%" data-7100="top:42%" id="canvasFireFlies" ></canvas>
+            <div class="min-w-max absolute z-0" data-8400="top:30%" data-7100="top:-45%" > <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
+            <div class="min-w-max absolute z-0 animate-flicker3" data-8400="top:-10%" data-7100="top:-45%" > <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
+            <div class="min-w-max absolute z-0 animate-flicker4" data-8400="top:-10%" data-7100="top:-45%" > <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
+            <div class="min-w-max absolute z-0" data-8400="top:-10%" data-7100="top:-45%" > <img src="./img/BGSummer/BGSummerClouds.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:00%" > <img src="./img/BGFire/BGFireMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:10%" > <img src="./img/BGFire/BGFireMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:20%" > <img src="./img/BGFire/BGFireTreeTop.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:30%" > <img src="./img/BGFinal/BGFinalTreeBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:40%" > <img src="./img/BGFinal/BGFinalPlainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:50%" > <img src="./img/BGFinal/BGFinalPlainBottom.png"></div>
+            <div class="min-w-max absolute z-30" data-0="top:13%" > <img src="./img/BGFinal/BGFinalBush.png"></div>
             <!--This is the Life change-->
-            <div class="min-w-max absolute" data-8600="opacity: 1;" data-8500="opacity: 0;" data-0="top:0%" style="z-index: 1; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;"> <img src="./img/BGFinal/BGFinalTreeLife.png"></div>
+            <div class="min-w-max absolute z-10" data-8600="opacity: 1;" data-8500="opacity: 0;" data-0="top:0%" > <img src="./img/BGFinal/BGFinalTreeLife.png"></div>
         </div>
     </div>
     <div>        
-    <div style="height: 400px; width: 1767px;">
-        <p style="color: white; text-align: center; padding-top: 15%;">
-            Thanks to all from Jeffrey Moreland and his team:<br/>
-            Zachary Tubbs II<br/>
-            Francis Vandinh<br/>
-            Joana Mucogllava<br/>
-            Daniel Sanchez<br/>
-        </p>
+        <div class="flex justify-center" style="height: 400px; width: 1767px;">
+            <h1 class="absolute z-50 text-9xl text-center self-begin font-medium tracking-widest text-indigo-900" data-8600="opacity: 1;" data-8500="opacity: 0;" >REBIRTH</h1>
+            <p class="z-40 text-4xl font-medium text-center text-white self-end pb-5 tracking-widest subpixel-antialiased" >
+                Thanks to all from Jeffrey Moreland and his team:<br/>
+                Zachary Tubbs II<br>
+                Francis Vandinh<br>
+                Joana Mucogllava<br>
+                Daniel Sanchez<br>
+            </p>
+        </div>
     </div>
+
+    <div>
+        <!--This will be the navbar-->
+        <aside class="navbar hidden" id="navbar">
+            <nav class="navbar-wrap">
+                <div class="navbar-wrapper">
+                    <a class="nav-item logo-nav J-totop">
+                        7SEASONS
+                    </a>
+                    <a class="nav-item nav-item-link nav-register">
+                        SUMMER
+                        <div class="paperfly">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-item-link active">
+                        FALL
+                        <div class="paperfly">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-item-link">
+                        WINTER
+                        <div class="paperfly">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-item-link news-link">
+                        SPRING
+                        <div class="paperfly">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-item-link media-link">
+                        LIFE
+                        <div class="paperfly">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-item-link media-link">
+                        DEATH
+                        <div class="paperfly">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-item-link media-link">
+                        REBIRTH
+                        <div class="paperfly">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+        </aside>
     </div>
 </div> 
     <script src="canvas.js"></script>
@@ -138,26 +267,36 @@
 	<script type="text/javascript">
 	    var s = skrollr.init();
     </script>
-    <script>
-        $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
+        <script>
+            $(window).scroll(function() {    
+                var scroll = $(window).scrollTop();
 
-    if (scroll >= 6200) {
-        $(".embers1").removeClass("animate-flicker1");
-        $(".embers2").removeClass("animate-flicker2");
-    } else {
-        $(".embers1").addClass("animate-flicker1");
-        $(".embers2").addClass("animate-flicker2");
-    }
-    
-    if (scroll >= 3900) {
-        $(".rain1").addClass("animate-rainfall1");
-        $(".rain2").addClass("animate-rainfall2");
-    } else {
-        $(".rain1").removeClass("animate-rainfall1");
-        $(".rain2").removeClass("animate-rainfall2");
-    }
-});
+                if (scroll >= 6200) {
+                    $(".embers1").removeClass("animate-flicker1");
+                    $(".embers2").removeClass("animate-flicker2");
+                } else {
+                    $(".embers1").addClass("animate-flicker1");
+                    $(".embers2").addClass("animate-flicker2");
+                }
+                
+                if (scroll >= 3900) {
+                    $(".rain1").addClass("animate-rainfall1");
+                    $(".rain2").addClass("animate-rainfall2");
+                    $(".rain3").addClass("animate-rainfall3");
+                    $(".rain4").addClass("animate-rainfall4");
+                } else {
+                    $(".rain1").removeClass("animate-rainfall1");
+                    $(".rain2").removeClass("animate-rainfall2");
+                    $(".rain3").removeClass("animate-rainfall3");
+                    $(".rain4").removeClass("animate-rainfall4");
+                }
+
+                if (scroll >= 1000) {
+                    $(".navbar").removeClass("hidden");
+                } else {
+                    $(".navbar").addClass("hidden");
+                }
+            });
     </script>
 </body>
 

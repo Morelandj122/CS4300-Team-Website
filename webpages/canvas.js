@@ -7,6 +7,8 @@ var canvasSnow = document.getElementById('canvasSnow');
 var cS = canvasSnow.getContext('2d');
 var canvasPyro = document.getElementById('canvasPyro');
 var cP = canvasPyro.getContext('2d');
+var canvasMeteor = document.getElementById('canvasMeteor');
+var cM = canvasMeteor.getContext('2d');
 
 var ScrollDistance = 0;
 var CanvasInUse = canvasFireFlies;
@@ -50,7 +52,17 @@ this.window.addEventListener('scroll', function () {
             CanvasInUse.height = window.innerHeight;
             init();
         }
-    } else if (ScrollDistance < 5500 && ScrollDistance >= 3900) {
+    } else if (ScrollDistance < 5500 && ScrollDistance >= 4400) {
+        if (IsLoaded != 4) {
+            CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
+            IsLoaded = 4;
+            CanvasInUse = canvasMeteor;
+            CanvasContextInUse = cM;
+            CanvasInUse.width = window.innerWidth;
+            CanvasInUse.height = window.innerHeight;
+            init();
+        }
+    } else if (ScrollDistance < 4400 && ScrollDistance >= 3900) {
         if (IsLoaded != 1) {
             CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
             IsLoaded = 1;
@@ -100,7 +112,7 @@ var radius = 1;
 
 //defaults
 var lastTime = 0;
-var interval = 1000/60; //60 fps
+var interval = 1000 / 60; //60 fps
 var timer = 0;
 var motionCompensation = 2; //compentation value for fps change
 var onClickRadius = 20;
@@ -134,6 +146,11 @@ function SpawnLocation() {
         spawnxplus = 0; //innerWidth / X
         spawnydiv = 10;
         spawnyplus = innerHeight * 0.7; //innerHeight / X        
+    } else if (CanvasInUse == canvasMeteor) {
+        spawnxdiv = 1;
+        spawnxplus = 0; //innerWidth / X
+        spawnydiv = 2.8;
+        spawnyplus = innerHeight / 20; //innerHeight / X        
     }
 }
 
@@ -202,6 +219,18 @@ var leafPngArray = [
     './leaves/leaf_8.png',
 ]
 
+//meteor images
+var meteorPngArray = [
+    './meteors/meteor_1.png',
+    './meteors/meteor_2.png',
+    './meteors/meteor_3.png',
+    './meteors/meteor_4.png',
+    './meteors/meteor_5.png',
+    './meteors/meteor_6.png',
+    './meteors/meteor_7.png',
+    './meteors/meteor_8.png',
+]
+
 window.addEventListener('mousemove', function (event) {
     //console.log("y = " + mouse.y + " and x = " + mouse.x);
     //This needs work because the mouse location is flawed when the window is reduced -jeff
@@ -241,7 +270,7 @@ function Shatter(objectx, objecty, Objectradius) {
             var isShatter = true;
             clickArray.push(new SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan, isShatter));
         }
-    } else if (CanvasInUse == canvasPyro) {
+    } else if (CanvasInUse == canvasPyro || CanvasInUse == canvasMeteor) {
         for (let i = 0; i < 10; i++) {
             var radius = Math.random() * Objectradius + 0.3;
             var x = objectx;
@@ -415,6 +444,90 @@ function Leaf(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan) {
     }
 }
 
+function Meteor(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan, isShatter) {
+    this.x = x;
+    this.y = y;
+    this.dx = dx * motionCompensation;
+    this.dy = dy * motionCompensation;
+    this.angle = angleStart;
+    this.spin = rotationalVelocity * motionCompensation;
+    this.acc = 0.05 * motionCompensation;
+    this.radius = radius;
+    this.gravity = 0.02 * motionCompensation;
+    this.lifespan = lifespan / motionCompensation;
+    this.life = isShatter ? (lifespan / motionCompensation * 0.5) : (Math.random() * lifespan / motionCompensation);
+    this.life = Math.random() * lifespan / motionCompensation;
+    this.imd = 75;
+    this.img = new Image();
+    this.img.src = meteorPngArray[Math.floor(Math.random() * meteorPngArray.length)];
+
+    this.draw = function () {
+        CanvasContextInUse.save();
+
+
+        CanvasContextInUse.translate(this.x, this.y);
+
+        if (this.life > (this.lifespan * 0.9)) {
+            CanvasContextInUse.globalAlpha = 1;
+        } else if (this.life > this.lifespan) {
+            CanvasContextInUse.globalAlpha = 0;
+        }
+
+        CanvasContextInUse.drawImage(this.img, -(this.radius / 2), -(this.radius / 2), this.radius, this.radius);
+
+        CanvasContextInUse.restore();
+    }
+
+    this.update = function () {
+        this.life++;
+        if (this.life >= this.lifespan * 1.0) {
+            this.life = 0;
+            Shatter(this.x, this.y, this.radius / 2);
+            this.x = (Math.random() * (innerWidth - radius * 2) + radius) / spawnxdiv + spawnxplus;
+            this.y = (Math.random() * (innerHeight - radius * 2) + radius) / spawnydiv + spawnyplus;
+        } else if (this.life >= this.lifespan * 0.8) {
+
+            if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+                //this.dx = -this.dx;
+            }
+
+            if (this.y - this.radius < 0) {
+                this.dy = -this.dy;
+            } //else if (this.y + this.radius > innerHeight) {this.dy = -this.dy;}
+
+            if (this.dy > 10 * motionCompensation || this.dy < -10 * motionCompensation) {
+                this.dy = this.dy / 2;
+            } else if (this.dy > 2 * motionCompensation) {
+                this.dy -= this.gravity;
+            } else if (this.dy < 0.75 * motionCompensation) {
+                this.dy += this.gravity;
+            }
+
+            if (this.dx > 10 * motionCompensation || this.dx < -10 * motionCompensation) {
+                this.dx = this.dx / 2;
+            } else if (this.dx > 1 * motionCompensation) {
+                this.dx -= this.gravity;
+            } else if (this.dx < -1 * motionCompensation) {
+                this.dx += this.gravity;
+            }
+
+            //on click interaction 
+            if (Math.abs(click.x - this.x) < onClickRadius && Math.abs(click.y - this.y) < onClickRadius) {
+                //console.log(click.x + "mx my" + click.y + this.x + "x y" +  this.y);
+                this.life = 0;
+                Shatter(this.x, this.y, this.radius);
+                this.x = (Math.random() * (innerWidth - radius * 2) + radius) / spawnxdiv + spawnxplus;
+                this.y = (Math.random() * (innerHeight - radius * 2) + radius) / spawnydiv + spawnyplus;
+            }
+
+            this.x += this.dx;
+            this.y += this.dy;
+
+            this.draw();
+        }
+    }
+}
+
 function FireFly(x, y, dx, dy, radius, lifespan) {
     this.x = x;
     this.y = y;
@@ -527,7 +640,7 @@ function SnowFlake(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespa
     this.radius = radius;
     this.gravity = 0.02 * motionCompensation;
     this.lifespan = lifespan / motionCompensation;
-    this.life = isShatter? (lifespan / motionCompensation * 0.5) : (Math.random() * lifespan / motionCompensation);
+    this.life = isShatter ? (lifespan / motionCompensation * 0.5) : (Math.random() * lifespan / motionCompensation);
     this.color = colorArraySnow[Math.floor(Math.random() * colorArraySnow.length)];
     this.img = new Image();
     this.img.src = snowFlakePngArray[Math.floor(Math.random() * snowFlakePngArray.length)];
@@ -628,7 +741,7 @@ function Pyro(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan, is
     this.radius = radius;
     this.gravity = 0.02 * motionCompensation;
     this.lifespan = lifespan / motionCompensation;
-    this.life = isShatter? (lifespan / motionCompensation * 0.5) : (Math.random() * lifespan / motionCompensation);
+    this.life = isShatter ? (lifespan / motionCompensation * 0.5) : (Math.random() * lifespan / motionCompensation);
     this.color = colorArrayPyro[Math.floor(Math.random() * colorArrayPyro.length)];
     this.img = new Image();
     this.img.src = snowFlakePngArray[Math.floor(Math.random() * snowFlakePngArray.length)];
@@ -724,6 +837,7 @@ var leafArray = [];
 var fireFlyArray = [];
 var snowFlakeArray = [];
 var pyroArray = [];
+var meteorArray = [];
 var clickArray = [];
 
 function init() {
@@ -754,6 +868,20 @@ function init() {
             var angleStart = Math.random() * 360;
             var lifespan = Math.random() * 8000 + 2000;
             leafArray.push(new Leaf(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan));
+        }
+    } else if (CanvasInUse == canvasMeteor) {
+        meteorArray = [];
+        for (let i = 0; i < 100; i++) {
+            var radius = Math.random() * 20 + 10;
+            var x = (Math.random() * (innerWidth - radius * 2) + radius) / spawnxdiv + spawnxplus;
+            var y = (Math.random() * (innerHeight - radius * 2) + radius) / spawnydiv + spawnyplus;
+            var dx = (Math.random() * 2) + 0.5;
+            var dy = (Math.random() * 2) + 0.25;
+            var rotationalVelocity = (Math.random() - 0.5) * 4;
+            var angleStart = Math.random() * 360;
+            var lifespan = Math.random() * 8000 + 2000;
+            var isShatter = false;
+            meteorArray.push(new Meteor(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan, isShatter));
         }
     } else if (CanvasInUse == canvasFireFlies) {
         fireFlyArray = [];
@@ -804,7 +932,8 @@ function animate(timeStamp) {
         //run stuff
         timer = 0;
         CanvasContextInUse.clearRect(0, 0, innerWidth, innerHeight);
-    
+
+        //this reduces the clickarray objects then remove them once they reach a certain size
         for (let i = 0; i < clickArray.length; i++) {
             clickArray[i].radius -= 0.05 * motionCompensation;
             clickArray[i].update();
@@ -813,15 +942,19 @@ function animate(timeStamp) {
                 i--;
             }
         }
-    
+
         /*     for (var i = 0; i < circleArray.length; i++) {
             circleArray[i].update();
         } */
-    
+
         //Seventh of Seven places that require input for new canvas section
         if (CanvasInUse == canvasLeaves) {
             for (var i = 0; i < leafArray.length; i++) {
                 leafArray[i].update();
+            }
+        } else if (CanvasInUse == canvasMeteor) {
+            for (var i = 0; i < meteorArray.length; i++) {
+                meteorArray[i].update();
             }
         } else if (CanvasInUse == canvasFireFlies) {
             for (var i = 0; i < fireFlyArray.length; i++) {
