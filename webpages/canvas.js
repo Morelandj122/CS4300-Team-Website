@@ -233,20 +233,18 @@ var meteorPngArray = [
 
 window.addEventListener('mousemove', function (event) {
     //console.log("y = " + mouse.y + " and x = " + mouse.x);
-    //This needs work because the mouse location is flawed when the window is reduced -jeff
-    //I think it needs to reference the div area the canvas is in so it can determine
-    //the correct location -jeff
+    //fixed issue where mouse location was offset due to canvas size and window size -jeff
     rect = CanvasInUse.getBoundingClientRect();
-    mouse.x = event.x - rect.left;
-    mouse.y = event.y - rect.top;
+    mouse.x = (event.x - rect.left) * (CanvasInUse.width / rect.width);
+    mouse.y = (event.y - rect.top) * (CanvasInUse.height / rect.height);
 });
 
 window.addEventListener('click', function (event) {
     //console.log("y = " + click.y + " and x = " + click.x);
-    //this needs work (see above listener comment) -jeff
+    //fixed issue where mouse clicks were offset due to canvas size and window size -jeff
     rect = CanvasInUse.getBoundingClientRect();
-    click.x = event.x - rect.left;
-    click.y = event.y - rect.top;
+    click.x = (event.x - rect.left) * (CanvasInUse.width / rect.width);
+    click.y = (event.y - rect.top) * (CanvasInUse.height / rect.height);
 });
 
 window.addEventListener('resize', function () {
@@ -515,7 +513,7 @@ function Meteor(x, y, dx, dy, radius, rotationalVelocity, angleStart, lifespan, 
             if (Math.abs(click.x - this.x) < onClickRadius && Math.abs(click.y - this.y) < onClickRadius) {
                 //console.log(click.x + "mx my" + click.y + this.x + "x y" +  this.y);
                 this.life = 0;
-                Shatter(this.x, this.y, this.radius);
+                Shatter(this.x, this.y, this.radius / 2);
                 this.x = (Math.random() * (innerWidth - radius * 2) + radius) / spawnxdiv + spawnxplus;
                 this.y = (Math.random() * (innerHeight - radius * 2) + radius) / spawnydiv + spawnyplus;
             }
