@@ -2,211 +2,349 @@
   font-family: kingThings;
   src: url(../Kingthings\ Annexx.ttf);
 }
+
 h1 {
   font-family: kingThings;
 }
+
 @font-face {
   font-family: chopinScript;
   src: url(../ChopinScript.ttf);
 }
+
 p {
   font-family: chopinScript;
 }
-@keyframes swinging {
-   20% { transform: rotate(15deg); } 
-   40% { transform: rotate(-10deg); } 
-   60% { transform: rotate(5deg); } 
-   80% { transform: rotate(-5deg); } 
-   100% { transform: rotate(0deg); } 
-}
-@-webkit-keyframes swinging { 
-    20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; } 
-    20% { -webkit-transform: rotate(15deg); } 
-    40% { -webkit-transform: rotate(-10deg); } 
-    60% { -webkit-transform: rotate(5deg); } 
-    80% { -webkit-transform: rotate(-5deg); } 
-    100% { -webkit-transform: rotate(0deg); } 
- }
- @keyframes rainfall {
+
+@keyframes opacity {
   0% {
-      -webkit-opacity: 0;
-      opacity: 0;
-      filter: alpha(opacity=0);
-      transform: translate(0, 0);
+    -webkit-opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(100px, 0px);
   }
-  50% {
-      -webkit-opacity: 1;
-      opacity: 1;
-      filter: alpha(opacity=100);
-      transform: translate(-50px, 200px);
-  }
+
   100% {
-      -webkit-opacity: 0;
-      opacity: 0;
-      filter: alpha(opacity=0);
-      transform: translate(-100px, 400px);
+    -webkit-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=1);
+    transform: translate(0px, 0px);
   }
 }
- @keyframes rainfall1 {
-    from  {left:100px; top:-100px; opacity:1;}
-    to  {left:-100px; top:100px; opacity:0;}
+
+@-webkit-keyframes opacity {}
+
+@keyframes swinging {
+  20% {
+    transform: rotate(15deg);
   }
-  @-webkit-keyframes rainfall1 {
-     from  {left:100px; top:-100px; opacity:1;}
-     to  {left:-100px; top:100px; opacity:0;}
-   }
-  @keyframes rainfall2 {
-     from  {left:200px; top:-100px; opacity:1;}
-     to  {left:0px; top:100px; opacity:0;}
-   }
-   @-webkit-keyframes rainfall2 {
-      from  {left:200px; top:-100px; opacity:1;}
-      to  {left:0px; top:100px; opacity:0;}
-    }
- @keyframes flickerAnimation1 {
-    0%   { opacity:1; }
-    50%  { opacity:0.5; }
-    100% { opacity:1; }
+
+  40% {
+    transform: rotate(-10deg);
   }
-  @-webkit-keyframes flickerAnimation1{
-    0%   { opacity:1; }
-    50%  { opacity:0.5; }
-    100% { opacity:1; }
+
+  60% {
+    transform: rotate(5deg);
   }
-  @keyframes flickerAnimation2 {
-     0%   { opacity:1; }
-     50%  { opacity:0.05; }
-     100% { opacity:1; }
-   }
-   @-webkit-keyframes flickerAnimation2{
-     0%   { opacity:1; }
-     50%  { opacity:0.05; }
-     100% { opacity:1; }
-   }
-.animate-rainfall1{    
-    -webkit-animation: rainfall 0.48s linear infinite;
-     animation: rainfall 0.48s linear infinite;
+
+  80% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
-.animate-rainfall2{    
-    -webkit-animation: rainfall 0.48s linear 0.12s infinite;
-     animation: rainfall 0.48s linear 0.12s infinite;
+
+@-webkit-keyframes swinging {
+  20%, 40%, 60%, 80%, 100% {
+    -webkit-transform-origin: top center;
+  }
+
+  20% {
+    -webkit-transform: rotate(15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
 }
-.animate-rainfall3{    
-    -webkit-animation: rainfall 0.48s linear 0.24s infinite;
-     animation: rainfall 0.48s linear 0.24s infinite;
+
+@keyframes rainfall {
+  0% {
+    -webkit-opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(0, 0);
+  }
+
+  50% {
+    -webkit-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: translate(-50px, 200px);
+  }
+
+  100% {
+    -webkit-opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-100px, 400px);
+  }
 }
-.animate-rainfall4{    
-    -webkit-animation: rainfall 0.48s linear 0.36s infinite;
-     animation: rainfall 0.48s linear 0.36s infinite;
+
+@keyframes rainfall1 {
+  from {
+    left: 100px;
+    top: -100px;
+    opacity: 1;
+  }
+
+  to {
+    left: -100px;
+    top: 100px;
+    opacity: 0;
+  }
 }
+
+@-webkit-keyframes rainfall1 {
+  from {
+    left: 100px;
+    top: -100px;
+    opacity: 1;
+  }
+
+  to {
+    left: -100px;
+    top: 100px;
+    opacity: 0;
+  }
+}
+
+@keyframes rainfall2 {
+  from {
+    left: 200px;
+    top: -100px;
+    opacity: 1;
+  }
+
+  to {
+    left: 0px;
+    top: 100px;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes rainfall2 {
+  from {
+    left: 200px;
+    top: -100px;
+    opacity: 1;
+  }
+
+  to {
+    left: 0px;
+    top: 100px;
+    opacity: 0;
+  }
+}
+
+@keyframes flickerAnimation1 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes flickerAnimation1 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flickerAnimation2 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.05;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes flickerAnimation2 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.05;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-rainfall1 {
+  -webkit-animation: rainfall 0.48s linear infinite;
+  animation: rainfall 0.48s linear infinite;
+}
+
+.animate-rainfall2 {
+  -webkit-animation: rainfall 0.48s linear 0.12s infinite;
+  animation: rainfall 0.48s linear 0.12s infinite;
+}
+
+.animate-rainfall3 {
+  -webkit-animation: rainfall 0.48s linear 0.24s infinite;
+  animation: rainfall 0.48s linear 0.24s infinite;
+}
+
+.animate-rainfall4 {
+  -webkit-animation: rainfall 0.48s linear 0.36s infinite;
+  animation: rainfall 0.48s linear 0.36s infinite;
+}
+
 .rain1 {
   top: 275px;
   left: 100px;
 }
+
 .rain2 {
   top: 100px;
   left: -100px;
 }
+
 .rain3 {
   top: 0px;
   left: -300px;
 }
+
 .rain4 {
   top: 700px;
   left: 800px;
 }
+
 .navbar {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 12;
-  height: 100%;
-  -webkit-transition: opacity .6s ease-out, right .6s ease-out;
-  -moz-transition: opacity .6s ease-out, right .6s ease-out;
-  -ms-transition: opacity .6s ease-out, right .6s ease-out;
-  -o-transition: opacity .6s ease-out, right .6s ease-out;
-  transition: opacity .6s ease-out, right .6s ease-out;
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  -ms-opacity: 1;
-  opacity: 1;
-  filter: alpha(opacity=100)
+  z-index: 90;
+  -webkit-animation: opacity .6s ease-out, right .6s ease-out;
+  animation: opacity .6s ease-out, right .6s ease-out;
 }
+
+.music {
+  z-index: 90;
+}
+
 .animate-flicker1 {
-    -webkit-animation: flickerAnimation1 3s infinite;
-     animation: flickerAnimation1 3s infinite;
-     -webkit-animation-duration: 3s;
-     animation-duration: 3s; 
- }
- .animate-flicker2 {
-     -webkit-animation: flickerAnimation1 3s infinite;
-      animation: flickerAnimation1 3s infinite;
-      -webkit-animation-duration: 3s;
-      animation-duration: 3s; 
-      -webkit-animation-delay: 1.5s;
-      animation-delay: 1.5s;
-  }
-  .animate-flicker3 {
-      -webkit-animation: flickerAnimation2 3s infinite;
-       animation: flickerAnimation2 3s infinite;
-       -webkit-animation-duration: 5s;
-       animation-duration: 5s; 
-   }
-   .animate-flicker4 {
-       -webkit-animation: flickerAnimation2 3s infinite;
-        animation: flickerAnimation2 3s infinite;
-        -webkit-animation-duration: 4s;
-        animation-duration: 4s;
-    }
-.swinging { 
-    -webkit-transform-origin: top center; 
-    transform-origin: top center; 
-    -webkit-animation-name: swinging; 
-    animation-name: swinging;
- }
- .pickle {
-    padding-top:200px;
-    position: relative;
-    top: 20%;
-    right: -20%;
-    -webkit-animation-duration: 15s; 
-    animation-duration: 15s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite; 
-    -webkit-animation-fill-mode: both; 
-    animation-fill-mode: both;
- }
-.groovy { 
-    font-size: 30px;   
-    position: relative;
-    right: -20%;
-    top: 20%;
-    -webkit-animation-duration: 10s; 
-    animation-duration: 10s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite; 
-    -webkit-animation-fill-mode: both; 
-    animation-fill-mode: both; 
- }
+  -webkit-animation: flickerAnimation1 3s infinite;
+  animation: flickerAnimation1 3s infinite;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+.animate-flicker2 {
+  -webkit-animation: flickerAnimation1 3s infinite;
+  animation: flickerAnimation1 3s infinite;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+.animate-flicker3 {
+  -webkit-animation: flickerAnimation2 3s infinite;
+  animation: flickerAnimation2 3s infinite;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+}
+
+.animate-flicker4 {
+  -webkit-animation: flickerAnimation2 3s infinite;
+  animation: flickerAnimation2 3s infinite;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+}
+
+.swinging {
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swinging;
+  animation-name: swinging;
+}
+
+.pickle {
+  padding-top: 200px;
+  position: relative;
+  top: 20%;
+  right: -20%;
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.groovy {
+  font-size: 30px;
+  position: relative;
+  right: -20%;
+  top: 20%;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
 
 canvas {
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;
+  /*border: 1px solid black;*/
+  height: 100%;
+  width: 100%;
 }
 
 .parallax-container1 {
-    position: relative;
-    min-height: 1643px;
-    background: transparent;
+  position: relative;
+  min-height: 1643px;
+  background: transparent;
 }
 
 .parallax-container {
-    position: fixed;
-    overflow: visible;
-    width: 100%;
-    height: 1643px;
+  position: fixed;
+  overflow: visible;
+  width: 100%;
+  height: 1643px;
 }
-
-        
