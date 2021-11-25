@@ -19,7 +19,7 @@ CanvasInUse.width = window.innerWidth;
 CanvasInUse.height = window.innerHeight;
 
 this.window.addEventListener('scroll', function () {
-    console.log("Scroll = " + window.scrollY);
+    //console.log("Scroll = " + window.scrollY);
     //Second of Seven places that require input for new canvas section
     ScrollDistance = window.scrollY;
     if (ScrollDistance <= 1400) {

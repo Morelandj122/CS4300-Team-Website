@@ -2,19 +2,38 @@
 <html lang="en">
 
 <head>
+    <title>7Seasons</title>    
+	<meta name="from" content="https://github.com/Morelandj122/CS4300-Team-Website">
+	<meta name="author" content="Belgrade Heroes">
+	<meta name="copyright" content="Belgrade Heroes">
+	<meta name="editor" content="Jeffrey Moreland">
+	<meta name="front-end technicist" content="Jeffrey Moreland">
+	<meta name="designer" content="Jeffrey Moreland">
+	<meta name="pmid" content="27187">
+	<meta name="keywords" content="Belgrade Heroes, Official Website, BELGRADE HEROES, web development, software engineer, front-end development, full-stack development, 7Seasons, Seasons, 7">
+	<meta name="description" content="7Seasons is a proof of concept for canvas focused website design. Belgrade Heroes is an IT Solutions LLC allowing businesses and customers alike to find application and website solutions.">
+
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="UTF-8">
-    <title>Canvas</title>
+    <meta name="renderer" content="webkit">
+    <meta name="applicable-device" content="pc">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
 </head>
 
 <body style="background-color:black;"> 
+    <div class="h-0 hidden grid justify-center"><h2 class="text-2xl text-white text-center self-center">
+        Welcome User!<br>
+        This website was designed for displays of width 640pixels or greater,<br>
+        As such, you may experience some unintended bugs otherwise!</h2></div>
 <div class="grid justify-center overflow-hidden">
     <div id="scene1-buffer">
         <div id="top" class="flex justify-center" style="height: 700px; width: 1767px;">
                 <h1 class="absolute z-20 text-9xl self-center font-medium tracking-widest text-green-600 bg-white rounded-full pr-4 pl-6 pb-2 bg-opacity-30">7SEASONS</h1>
-                <h2 class="absolute z-20 text-3xl self-end font-medium tracking-widest animate-flicker3 text-purple-900">Scroll Down</h2>
+                <a href="javascript:playBGMusic()" class="absolute z-20 text-3xl self-end font-medium tracking-widest animate-flicker3 text-purple-900"><h2>Scroll Down</h2></a>
         </div>
     </div>
     <div id="scene1">
@@ -26,8 +45,8 @@
             <div class="min-w-max absolute z-0 animate-flicker4" data-1300="opacity: 0; top:-10%" data-800="" data-0="opacity: 1; top:-45%" > <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
             <div class="min-w-max absolute z-0" data-1300="top:-35%" data-0="top:05%" > <img src="./img/BGSummer/BGSummerSkySun.png"></div>
             <div class="min-w-max absolute z-0" data-1300="top:-10%" data-0="top:-45%" > <img src="./img/BGSummer/BGSummerClouds.png"></div>
-            <div class="min-w-max absolute z-10" data-1300="top:0%" data-0="top:00%" > <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
-            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:10%" > <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-1300="top:0%" data-0="top:-08%" > <img src="./img/BGSummer/BGSummerMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:5%" > <img src="./img/BGSummer/BGSummerMountainBottom.png"></div>
             <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:20%" > <img src="./img/BGSummer/BGSummerTreeTop.png"></div>
             <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:30%" > <img src="./img/BGSummer/BGSummerTreeBottom.png"></div>
             <div class="min-w-max absolute z-10" data-1500="opacity: 0;" data-1400="opacity: 1;" data-1300="top:0%" data-0="top:40%" > <img src="./img/BGSummer/BGSummerPlainTop.png"></div>
@@ -58,8 +77,8 @@
             <canvas class="absolute z-20" data-3700="top:10%" data-2400="top:-45%" id="canvasSnow" ></canvas>
             <div class="min-w-max absolute z-0" data-3700="top:35%" data-2400="top:-45%" > <img src="./img/BGSummer/BGSummerSky.png"></div>
             <div class="min-w-max absolute z-30" data-3700="top:10%" data-2400="top:-45%" > <img src="./img/BGWinter/BGWinterClouds.png"></div>
-            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:00%" > <img src="./img/BGWinter/BGWinterMountainTop.png"></div>
-            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:10%" > <img src="./img/BGWinter/BGWinterMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:-08%" > <img src="./img/BGWinter/BGWinterMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:5%" > <img src="./img/BGWinter/BGWinterMountainBottom.png"></div>
             <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:20%" > <img src="./img/BGWinter/BGWinterTreeTop.png"></div>
             <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:30%" > <img src="./img/BGWinter/BGWinterTreeBottom.png"></div>
             <div class="min-w-max absolute z-10" data-3900="opacity: 0;" data-3800="opacity: 1;" data-3700="top:0%" data-2400="top:40%" > <img src="./img/BGWinter/BGWinterPlainTop.png"></div>
@@ -97,8 +116,8 @@
             <div class="min-w-max absolute z-0" data-6000="top:35%" data-4700="top:-43%" > <img src="./img/BGSummer/BGSummerSkyNight.png"></div>
             <div class="min-w-max absolute z-0 animate-flicker3" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" > <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
             <div class="min-w-max absolute z-0 animate-flicker4" data-6000="opacity: 0; top:-10%" data-4700="opacity: 1; top:-43%" > <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
-            <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:00%" > <img src="./img/BGFire/BGFireMountainTop.png"></div>
-            <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:10%" > <img src="./img/BGFire/BGFireMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:-08%" > <img src="./img/BGFire/BGFireMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:5%" > <img src="./img/BGFire/BGFireMountainBottom.png"></div>
             <div class="min-w-max absolute z-10" data-6000="top:0%" data-4700="top:20%" > <img src="./img/BGFire/BGFireTreeTop.png"></div>
             <div class="min-w-max absolute z-10 embers1 animate-flicker1" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:20%"> <img src="./img/BGFire/BGFireEmber1.png"></div>
             <div class="min-w-max absolute z-10 embers2 animate-flicker2" data-6200="opacity: 0;" data-6100="opacity: 1;" data-6000="top:0%" data-4700="top:20%"> <img src="./img/BGFire/BGFireEmber2.png"></div>
@@ -131,8 +150,8 @@
             <div class="min-w-max absolute z-0 animate-flicker3" data-8400="top:-10%" data-7100="top:-45%" > <img src="./img/BGSummer/BGSummerSkyStar2.png"></div>
             <div class="min-w-max absolute z-0 animate-flicker4" data-8400="top:-10%" data-7100="top:-45%" > <img src="./img/BGSummer/BGSummerSkyStar1.png"></div>
             <div class="min-w-max absolute z-0" data-8400="top:-10%" data-7100="top:-45%" > <img src="./img/BGSummer/BGSummerClouds.png"></div>
-            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:00%" > <img src="./img/BGFire/BGFireMountainTop.png"></div>
-            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:10%" > <img src="./img/BGFire/BGFireMountainBottom.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:-08%" > <img src="./img/BGFire/BGFireMountainTop.png"></div>
+            <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:5%" > <img src="./img/BGFire/BGFireMountainBottom.png"></div>
             <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:20%" > <img src="./img/BGFire/BGFireTreeTop.png"></div>
             <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:30%" > <img src="./img/BGFinal/BGFinalTreeBottom.png"></div>
             <div class="min-w-max absolute z-10" data-8400="top:0%" data-7100="top:40%" > <img src="./img/BGFinal/BGFinalPlainTop.png"></div>
@@ -147,10 +166,10 @@
             <h1 class="absolute z-50 text-9xl text-center self-begin font-medium tracking-widest text-indigo-900 bg-black rounded-full pr-2 pl-8 pb-2 bg-opacity-50" data-8600="opacity: 1;" data-8500="opacity: 0;" id="rebirth">REBIRTH</h1>
             <p class="z-40 break-normal text-4xl font-medium text-center text-white self-end pb-5 tracking-widest subpixel-antialiased" >
                 Thanks to all from  <a class="text-blue-900 cursor-pointer" href="http://jeffreymoreland.com">Jeffrey Moreland</a> and his team:<br/>
-                Zachary Tubbs II <a class="text-blue-900 cursor-pointer" href="">Bio</a><br>
+                Zachary Tubbs II <a class="text-blue-900 cursor-pointer" href="./biopages/Personal Website.html">Bio</a><br>
                 Francis Vandinh <a class="text-blue-900 cursor-pointer" href="">Bio</a><br>
-                Joana Mucogllava <a class="text-blue-900 cursor-pointer" href="">Bio</a><br>
-                Daniel Sanchez <a class="text-blue-900 cursor-pointer" href="">Bio</a><br>
+                Joana Mucogllava <a class="text-blue-900 cursor-pointer" href="./biopages/MyWeb4-JoanaMucogllava.html">Bio</a><br>
+                Daniel Sanchez <a class="text-blue-900 cursor-pointer" href="./biopages/website.html">Bio</a><br>
             </p>
         </div>
     </div>
@@ -277,12 +296,23 @@
     </div>
 </div> 
 
-<audio class="music top-0 right-0 fixed" controls autoplay>
-<source src="./music/bg.mp3" type="audio/mp3">
+<audio class="music top-0 right-0 fixed" controls autoplay loop id="musicBG1" webkit-playsinline="true" playsinline="true">
+<source src="./music/musicBGTop.mp3" type="audio/mp3" id="">
+Your browser does not support the <code>audio</code> element.
 </audio>
-<audio  loop="" id="music" webkit-playsinline="true" playsinline="true"></audio>
-<audio src="./music/wind_loop.mp3" loop="" id="roundMusic" webkit-playsinline="true" playsinline="true"></audio>
-<audio src="./music/thunder.mp3" id="oneMusic" webkit-playsinline="true" playsinline="true"></audio>
+<audio class="music top-0 right-0 fixed hidden" controls loop id="musicBG2" webkit-playsinline="true" playsinline="true">
+    <source src="./music/thunder.mp3" type="audio/mp3" id="">
+</audio>
+<audio class="music top-0 right-0 fixed hidden" controls loop id="musicBG3" webkit-playsinline="true" playsinline="true">
+    <source src="./music/wind_loop.mp3" type="audio/mp3" id="">
+</audio>
+<audio class="music top-0 right-0 fixed hidden" controls loop id="musicBG4" webkit-playsinline="true" playsinline="true">
+<source src="./music/musicBGBottom.mp3" type="audio/mp3" id="">
+</audio>
+
+<audio src="./music/bg.mp3" loop="" id="song1" webkit-playsinline="true" playsinline="true"></audio>
+<audio src="./music/wind_loop.mp3" loop="" id="song2" webkit-playsinline="true" playsinline="true"></audio>
+<audio src="./music/thunder.mp3" id="song3" webkit-playsinline="true" playsinline="true"></audio>
 
 
     <script src="canvas.js"></script>
@@ -292,8 +322,30 @@
 	    var s = skrollr.init();
     </script>
         <script>
+            function playTopBGMusic() {
+                $(musicBG2)[0].pause();
+                $(musicBG3)[0].pause();
+                $(musicBG4)[0].pause();
+                $(musicBG1)[0].play();
+                $(musicBG1).removeClass("hidden");
+                $(musicBG4).addClass("hidden");
+            }
+            function playRainMusic() {
+                $(musicBG1)[0].pause();
+                $(musicBG4)[0].pause();
+                $(musicBG2)[0].play();
+                $(musicBG3)[0].play();
+            }
+            function playBottomBGMusic() {
+                $(musicBG1)[0].pause();
+                $(musicBG2)[0].pause();
+                $(musicBG3)[0].pause();
+                $(musicBG4)[0].play();
+                $(musicBG4).removeClass("hidden");
+                $(musicBG1).addClass("hidden");
+            }
+
             function scrollto(anchorName) {
-                var element = document.getElementById(anchorName);
                 if (anchorName == 'summer') {
                     window.scrollTo(0, 1400);
                 } else if (anchorName == 'fall'){
@@ -330,6 +382,14 @@
 
             $(window).scroll(function() {    
                 var scroll = $(window).scrollTop();
+
+                if (scroll >= 4800) {
+                    playBottomBGMusic();
+                } else if (scroll > 3800 && scroll < 4800) {  
+                    playRainMusic();
+                } else if (scroll >= 100) {
+                    playTopBGMusic();
+                }
 
                 if (scroll >= 6200) {
                     $(".embers1").removeClass("animate-flicker1");
