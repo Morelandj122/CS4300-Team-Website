@@ -1,0 +1,123 @@
+
+<html>
+    <head>
+      <meta charset = "utf-8">
+      <link rel="stylesheet" href="./style.css">
+      <title>Daniel's Website</title>
+    </head>
+    <body>
+      <!--Header Title-->
+      <div class="a">
+        <h1>Welcome to my website!</h1>
+        <h2>Hello, my name is Armando Daniel Sanchez</h2>
+      </div>
+    </body>
+    <style>
+      div.a {
+        text-align: center;
+        align-items: center;
+      } 
+    </style>
+    <body>
+        <!--Self image-->
+        <div class="image-container fade">
+          <img src = "websiteselfphoto.png" width = "180" height = "320">
+        </div>
+    </body>
+    <body>
+        <!--Add weblink-->
+        <div class="a">
+        <p><strong>Click link below to view my LinkedIn.</strong></p>
+        <p><a href = "https://www.linkedin.com/in/sanchezda/">LinkedIn</a></p>
+      </div>
+    </body>
+    <body>
+      <div class ="medium black outset">
+        <p>
+        I am a senior undergraduate student at the University of Houston - Downtown who is graduating in the Fall of 2021 with a bachelors in computer science. I ahve a passion for software engineerng and innovations. One of the things that I am pursuing after graduation is to continue with my social media mobile app project and turn it into a company. I don't believe in failing, but if things do not turn out the way i want it to with my business I want to seek a job opportunity with Apple or SpaceX. Reason for that is because both companies are always seeking to grow as a company and push innovations a step further. 
+        </p>
+      </div>
+    </body>
+
+    <!--Added Box Model for List of Projects-->
+    <style type = "text/css">
+      div { text-align: center;
+            width: 50%;
+            position: relative;
+            left: 25%;
+            border-width: 6px;}
+      .medium { border-width: medium;}
+      .outset {border-style: outset;}
+      .black {border-color: black;}
+    </style>
+    <body>  
+          <div class = "medium black outset"> 
+            <h3>Here a couple of projects that I've done over the years in school:</h3>
+            <ol>
+              <li>Designed Front End and Back End for an Android application that allows users to register for volunteer work in their commmunity using Java and Firebase.</li>
+              <li>Team role as a User Interface desginer for a software program for teachers and students to access and register classes.</li>
+              <li>Full Stack iOS mobile application for a social media platform that givess users the ability to video blog and video podcast content of their choice. All desgined using Swift and UI kit and Firebase.</li>
+            </ol>  
+          </div>
+    </body>
+
+    <!-- Table for Experiences in Coding Languages-->
+    <style>
+      table {
+        align-items: center;
+        position: relative;
+        border-collapse: collapse;
+        width: 50%;
+        left: 25%
+      }
+                  
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid rgb(225, 225, 225);
+      }
+                  
+      tr:hover {background-color: #D6EEEE;}
+    </style>
+    <body>
+      <div class="a"><h2>Coding Languages Experience</h2>
+      <p>The following shows the years of experience with lsited languages.</p></div>
+                    
+      <table>
+        <tr>
+          <th>Language</th>
+          <th>Applicated</th>
+          <th>Years</th>
+        </tr>
+        <tr>
+          <td>Swift</td>
+          <td>iOS apps</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>C++</td>
+          <td>Data Structures and Software Programs</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>Websites and mobile applications</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>MySQL</td>
+          <td>Database Architecture</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </body>
+
+      <!--Question Submission box for visitors-->
+    <form action="/action_page.php">
+          <div class ="a"><h3>Questions?</h3>
+          <p>Submit any questions you may have about me below!</p>
+          <label for="fname">Type Question.</label><br>
+          <input type="text" id="question" name="question" value=" "><br>
+          <input type="submit" value="Submit"></div>
+    </form>
+</html>
